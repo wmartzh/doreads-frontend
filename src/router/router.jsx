@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
 import Books from "../pages/books/Books";
 import RegisterBook from "../pages/books/RegisterBook";
 import LoanedBooks from "../pages/books/loanedBooks";
@@ -24,10 +23,6 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />
-    },
-    {
-        path: "/register",
-        element: <Register />
     },
     {
         path: "/books",
