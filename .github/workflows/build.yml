@@ -20,9 +20,6 @@ jobs:
   run_build:
     name: Run linters
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 17.x, 18.x]
 
     steps:
       - uses: actions/checkout@v3
