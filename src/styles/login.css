@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .body{
     background-color: #F5F5F5;
-    
+    font-family: 'Open Sans', sans-serif;  
 }
 .content{
     display: grid;
@@ -11,6 +12,7 @@
 
 }
 #form{
+    font-family: 'Open Sans', sans-serif;
     margin: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     -webkit-border-radius: 10px 10px 10px 10px;
@@ -27,22 +29,68 @@
     height: 600px;
 
 }
-#logoForm{
-    margin: auto;
-    height: 250px;
-    width: 250px;
-    
-}
-input[type=text] , input[type=password] {
-    background-color: #f6f6f6;
+#login{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #394C73;
     border: none;
     color: #d6d6d6;
-    margin-left: 10%;
     text-align: left;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    width: 80%;
+    width: 40%;
+    border: 2px solid #394C73;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    max-height: 50px;
+}
+#login:hover{
+    background-color: #003aa3;
+}
+#logoForm{
+    margin: auto;
+    height: 300px;
+    width: 300px; 
+}
+.iconInput {
+    background-color: #f6f6f6; 
+    display: flex;
+    max-height: 40px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.loginIcon{
+    padding: 10px;
+    min-width: 50px;
+    max-height: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 0;
+}
+.loginIcon:hover{
+    background-color: #d6e3fe;
+}
+input[type=text] , input[type=password] {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f6f6f6;
+    border: none;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -54,12 +102,14 @@ input[type=text] , input[type=password] {
     max-height: 40px;
   }
   
-  input[type=text]:focus , input[type=password]:focus ,input[type=email]:focus {
-    background-color: #fff;
+.iconInput:hover, .iconInput:focus-within {
     border-bottom: 2px solid #394c73;
     outline: none;
   }
+  input[type=text]:focus , input[type=password]:focus ,input[type=email]:focus{
+    outline: none;
+  } 
   
   input[type=text], input[type=password] :placeholder {
-    color: #394c73;
+    color: #000000;
   }
