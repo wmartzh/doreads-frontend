@@ -11,6 +11,18 @@ const Login = () => {
   const [alert, setAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [alertSeverity, setAlertSeverity] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const HandlePasswordTxt = () => {
+    console.log('showPassword clicked');
+    if (showPassword == false) {
+      document.getElementById('Password').type = 'text';
+      setShowPassword(!showPassword);
+    } else {
+      document.getElementById('Password').type = 'password';
+      setShowPassword(!showPassword);
+    }
+  };
   const handleChangeTxt = () => {
     if (alert === true) {
       setAlert(!alert);
@@ -101,7 +113,13 @@ const Login = () => {
                 placeholder="Enter Password"
                 onChange={handleChangeTxt}
               />
-              <img src={passwordIcon} alt="" className="loginIcon" />
+              <img
+                src={passwordIcon}
+                alt=""
+                className="loginIcon"
+                id="passwordIcon"
+                onClick={HandlePasswordTxt}
+              />
             </div>
             <BootstrapButton
               type="submit"
