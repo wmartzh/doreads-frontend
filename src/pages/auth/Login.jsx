@@ -8,15 +8,14 @@ import axios from 'axios';
 // import axiosApiInstance from '../../components/tokenIntercept';
 import AlertComp from '../../components/Alert.jsx';
 const Login = () => {
-  // const usernameTxtBCh = () => {
-  //   console.log('Username clicked');
-  // };
-  // const passwordTxtBCh = () => {
-  //   console.log('Password clicked');
-  // };
   const [alert, setAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [alertSeverity, setAlertSeverity] = useState('');
+  const handleChangeTxt = () => {
+    if (alert === true) {
+      setAlert(!alert);
+    }
+  };
   const postData = async (url, data) => {
     try {
       const response = axios.post(url, data);
@@ -31,11 +30,11 @@ const Login = () => {
   };
   const loginClickHandler = async (e) => {
     e.preventDefault();
-    let username = document.getElementById('Username').value;
+    let Email = document.getElementById('Email').value;
     let password = document.getElementById('Password').value;
-    if (username !== '' && password !== '') {
+    if (Email !== '' && password !== '') {
       let data = await postData('https://doreads-api-dev.onrender.com/auth/login', {
-        email: username,
+        email: Email,
         password: password
       });
       console.log(data);
@@ -54,24 +53,32 @@ const Login = () => {
             console.log(error);
             setAlertSeverity('error');
             setAlertMessage('Error, Invalid Credentials');
-            setAlert(!alert);
+            setAlert(true);
           }
         }
       }
     } else {
-      if (username == '' && password == '') {
+      if (Email == '' && password == '') {
+        console.log('Please enter Email and password');
         setAlertSeverity('warning');
-        setAlertMessage('Please enter username and password');
-        setAlert(true);
-        // alert('Please enter username and password');
-      } else if (username == '') {
+        setAlertMessage('Please enter Email and password');
+        if (alert === false) {
+          setAlert(true);
+        }
+      } else if (Email == '') {
+        console.log('Please enter Email');
         setAlertSeverity('warning');
-        setAlertMessage('Please enter Username');
-        setAlert(true);
+        setAlertMessage('Please enter Email');
+        if (alert === false) {
+          setAlert(true);
+        }
       } else if (password == '') {
+        console.log('Please enter Password');
         setAlertSeverity('warning');
         setAlertMessage('Please enter Password');
-        setAlert(false);
+        if (alert === false) {
+          setAlert(true);
+        }
       }
     }
   };
@@ -84,11 +91,16 @@ const Login = () => {
           </div>
           <div className="textFields">
             <div className="iconInput">
-              <input type="text" id="Username" placeholder="Enter Username" />
+              <input type="text" id="Email" placeholder="Enter Email" onChange={handleChangeTxt} />
               <img src={userIcon} alt="" className="loginIcon" />
             </div>
             <div className="iconInput">
-              <input type="password" id="Password" placeholder="Enter Password" />
+              <input
+                type="password"
+                id="Password"
+                placeholder="Enter Password"
+                onChange={handleChangeTxt}
+              />
               <img src={passwordIcon} alt="" className="loginIcon" />
             </div>
             <BootstrapButton

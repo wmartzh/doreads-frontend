@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .body{
-    background-color: #F5F5F5;
+    background-color: #FEFEFF;
     font-family: 'Open Sans', sans-serif;  
 }
 .content{
+    background-color: #FEFEFF;
     display: grid;
     align-items: center;
     width: 100%;
@@ -11,14 +12,14 @@
 }
 #form{
     font-family: 'Open Sans', sans-serif;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #f2f2f3;
+    background-color: rgba(214,214,214,0.29);
     padding: 10px;
     width: 90%;
     max-width: 600px;
@@ -27,7 +28,7 @@
     box-shadow: 0 0 5px hsl(206, 7%, 81%);
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 550px;
 
 }
 .errorContainer{
