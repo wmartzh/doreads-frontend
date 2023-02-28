@@ -5,6 +5,7 @@ import '../../styles/login.css';
 import { useState } from 'react';
 import BootstrapButton from '../../components/btnBlue.jsx';
 import axios from 'axios';
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 // import axiosApiInstance from '../../components/tokenIntercept';
 import AlertComp from '../../components/Alert.jsx';
 const Login = () => {
@@ -55,8 +56,8 @@ const Login = () => {
           console.log(data.data);
           try {
             if (data.data.response != 'Incorrect Password') {
-              console.log(data.data.response);
-              localStorage.setItem('user', JSON.stringify(data.data.response));
+              // console.log(data.data.response);
+              // localStorage.setItem('user', JSON.stringify(data.data.response));
               window.location.href = '/home';
             } else {
               throw new Error('Error, Invalid Credentials');
@@ -65,7 +66,9 @@ const Login = () => {
             console.log(error);
             setAlertSeverity('error');
             setAlertMessage('Error, Invalid Credentials');
-            setAlert(true);
+            if (alert === false) {
+              setAlert(true);
+            }
           }
         }
       }
