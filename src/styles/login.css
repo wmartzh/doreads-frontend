@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.body{
+    background-color: #FEFEFF;
+    font-family: 'Open Sans', sans-serif;  
+}
+.content{
+    background-color: #FEFEFF;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+#form{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(214,214,214,0.29);
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px hsl(206, 7%, 81%);
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+
+}
+.errorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 80%;
+}
+.textFields{
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    gap: 5px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+#logoFormDiv{
+    width: 50%;
+    height: 20%;
+    max-height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+#logoForm{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.iconInput {
+    margin-top: 40px;
+    background-color: #f6f6f6; 
+    display: flex;
+    max-height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.loginIcon{
+    padding: 10px;
+    min-width: 50px;
+    max-height: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 0;
+}
+.loginIcon:hover{
+    background-color: #d6e3fe;
+}
+input[type=text] , input[type=password] {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f6f6f6;
+    border: none;
+    color: #000000;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    max-height: 40px;
+  }
+  
+.iconInput:hover, .iconInput:focus-within {
+    border-bottom: 2px solid #394c73;
+    outline: none;
+  }
+  input[type=text]:focus , input[type=password]:focus ,input[type=email]:focus{
+    outline: none;
+  } 
+  
+  input[type=text], input[type=password] :placeholder {
+    color: #000000;
+  }
+  #loginButton{
+    margin: auto;
+  }
+
