@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+
+.body{
+    background-color: #F5F5F5;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+ }
+ 
+.sideBar{
+     width: 300px;
+     min-height: 100vh;  
+ }
+
+.IconBook{
+     width: 250px;
+     height: 250px;
+     float: right;
+     margin-top: 50px;
+     margin-right: 10px;
+ }
+
+.Books{ 
+  min-width: 30%;
+  max-height: 79vh;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-bottom: 50px;	
+}
+
+
+.DescBooks{ 
+    min-width: 55%;
+    max-height: 79vh;
+    margin-top: 100px;
+    margin-right: 20px;
+    margin-bottom: 107px;
+    border: #000000 1px solid;
+  }
+
+.Title{
+    font-family: 'Open Sans', sans-serif;
+    font-style: semi-bold;;
+    font-size: 16px;
+    padding: 10PX;  
+}
+
+.Books1{
+    min-width: 100%;
+    border: 1px solid #000000;
+    padding: 10px;
+    max-height: 78vh;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+.Books1::-webkit-scrollbar {
+    display: none;
+}
+
+.Cont{
+    display: flex;
+    max-height: 95vh;
+    min-width: 170vh;
+    border: #000000 1px solid;
+    margin : 20px;
+    margin-left: 10px;
+}

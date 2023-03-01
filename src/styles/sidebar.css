@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+.sidebar{
+    width: 275px;
+    box-shadow: 0 0 19px hsl(206, 7%, 81%);
+    background-color: #F5F5F5;
+    min-height: 100vh;
+}
+
+.icon{
+    width: 160px;
+    height: 170px;               
+}

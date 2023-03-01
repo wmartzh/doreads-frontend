@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+.body{
+   background-color: #F5F5F5;
+   display: flex;
+   width: 100%;
+   min-height: 100vh;
+   height: 100%;
+   min-height: 100vh;
+}
+
+.sideBar{
+    width: 300px;
+    min-height: 100vh;
+}
+
+.SearchCont{
+    box-shadow: 0 0 5px hsl(206, 7%, 81%);
+    min-width:168vh;
+    min-height: 40%;
+    border-color: #D6D6D6;
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.Cont2{
+    box-shadow: 0 0 5px hsl(206, 7%, 81%);
+    min-width:168vh;
+    min-height: 40%;
+    border-color: #D6D6D6;
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+}
+
+.Welcome{
+    width: 15%;	
+    height: 38%;
+}
+
+
+.Title{
+    font-family: 'Open Sans', sans-serif;
+    font-style: semi-bold;;
+    font-size: 16px;  
+}
+
+.Title1{
+    font-family: 'Open Sans', sans-serif;
+    font-style: semi-bold;;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.Desc{
+    font-family: 'Open Sans', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    font-size: 15px;
+    
+}
+
+.IconBook{
+    width: 250px;
+    height: 250px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 10px;
+}
+
+.ImageBook{
+    width: 85%;	
+    height: 50%;
+}
+
+.cont{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    min-height: 90vh;
+}
+
+
+.RegisterWorker{
+    width: 50%;
+    height: 110%;
+    border-right: 1px solid #D6D6D6;
+    border-right-style: solid;
+    display: grid;
+}
+
+.Worker{
+    height: 210px;
+    width: 210px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+}
+
+.Search{
+    height: 210px;
+    width: 210px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;  
+}
+
+.DescWork{
+    font-family: 'Open Sans', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    font-size: 16px;
+    width: 290px;
+    margin-bottom: 10px;
+    margin-top: 22px;
+}
+
+.Software{
+    width: 50%;
+    height: 110%;
+    display: grid;
+    padding-left: 10px;
+}	
+
+.Desc2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    width: 180px;
+}   
+
