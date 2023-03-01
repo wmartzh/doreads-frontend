@@ -1,5 +1,5 @@
-import Sidebar from '../../Components/SideBar';
-import Items from '../../Components/Stack2';
+import Sidebar from '../../components/SideBar';
+import Items from '../../components/Stack2';
 import '../../styles/Students.css';
 
 const Student = () => {
