@@ -1,7 +1,7 @@
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Img from '../Components/Box.jsx';
+import Img from '../components/Box.jsx';
 import ImportBook from '../assets/online-learning.svg';
 import Loan from '../assets/education1.svg';
 import Register from '../assets/education2.svg';
