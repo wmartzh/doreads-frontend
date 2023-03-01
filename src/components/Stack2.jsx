@@ -34,7 +34,7 @@ function Items({ text1, text2, text3, href }) {
   };
   return (
     <div className="Books1">
-      <h1 className="Title">Books</h1>
+      <h1 className="Title">Students</h1>
       <Stack spacing={2}>
         <Item href={href} onClick={Click}>
           <div>
