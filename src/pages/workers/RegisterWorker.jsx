@@ -1,4 +1,5 @@
 import Sidebar from '../../components/SideBar';
+import Form from '../../components/FormWorker';
 import '../../styles/Registerworker.css';
 
 const Book = () => {
@@ -12,7 +13,7 @@ const Book = () => {
           <h1 className="Title">HEADER</h1>
         </div>
         <div className="ContForm">
-          <h1 className="Title">FORM COMPONENT</h1>
+          <Form />
         </div>
       </div>
     </div>
