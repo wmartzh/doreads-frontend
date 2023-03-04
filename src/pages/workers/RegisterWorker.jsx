@@ -7,7 +7,9 @@ const Book = () => {
       <div className="sideBar">
         <Sidebar />
       </div>
-      <div className="Cont"></div>
+      <div className="ContMain">
+        <div className="ContForm"></div>
+      </div>
     </div>
   );
 };

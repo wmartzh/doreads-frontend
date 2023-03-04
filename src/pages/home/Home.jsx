@@ -20,7 +20,7 @@ const home = () => {
               The book catalog is waiting for you, by clicking the button go directly to it and
               Manage your books
             </h4>
-            <div>
+            <div className="BtnPos">
               <BtnBlue href={'/search'} text="Search"></BtnBlue>
             </div>
           </div>

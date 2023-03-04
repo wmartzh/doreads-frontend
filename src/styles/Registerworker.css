@@ -1,9 +1,13 @@
 
-.Cont{
+.ContMain{
     display: flex;
-    max-height: 95vh;
-    min-width: 170vh;
-    border: #353535 1px solid;
-    margin : 20px;
-    margin-left: 10px;
+    width: 100%;
+    height: 100vh;
+    border: #000000 1px solid;
+}
+
+
+.sideBar{
+    width: 275px;
+    height: 100%;  
 }

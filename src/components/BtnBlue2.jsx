@@ -12,7 +12,6 @@ function BootstrapButton({ href, text }) {
     fontSize: 16,
     padding: '6px 12px',
     lineHeight: 1.5,
-    'margin-top': '120px',
     backgroundColor: '#394C73',
     fontFamily: ['Open Sans', 'sans-serif'].join(','),
     '&:hover': {
