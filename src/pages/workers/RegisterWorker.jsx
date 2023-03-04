@@ -1,8 +1,14 @@
-const RegisterWorkers = () => {
+import Sidebar from '../../components/SideBar';
+import '../../styles/Registerworker.css';
+
+const Book = () => {
   return (
-    <div>
-      <h1>RegisterWorkers</h1>
+    <div className="body">
+      <div className="sideBar">
+        <Sidebar />
+      </div>
+      <div className="Cont"></div>
     </div>
   );
 };
-export default RegisterWorkers;
+export default Book;

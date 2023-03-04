@@ -1,0 +1,9 @@
+
+.Cont{
+    display: flex;
+    max-height: 95vh;
+    min-width: 170vh;
+    border: #353535 1px solid;
+    margin : 20px;
+    margin-left: 10px;
+}
