@@ -32,52 +32,34 @@ function Form() {
     }
   };
   const postData = async (url, data) => {
-    try {
-      const response = axios.post(url, data);
-      return response;
-      // throw new Error('Error, Invalid Credentials');
-    } catch (error) {
-      console.log(error);
-      setAlertSeverity('error');
-      setAlertMessage('Error, Invalid Credentials');
-      setColorAlert('red');
-      setAlert(!alert);
-    }
+    const data1 = await axios.post(url, {
+      name: data['name'],
+      email: data['email'],
+      password: data['password']
+    });
+    return data1;
   };
-  const loginClickHandler = async (e) => {
+
+  const RegisterClickHandler = async (e) => {
     e.preventDefault();
     let Email = document.getElementById('Email').value;
     let password = document.getElementById('Password').value;
     let name = document.getElementById('Name').value;
     let password1 = document.getElementById('Password1').value;
     if (Email !== '' && password !== '' && name !== '' && password1 !== '') {
-      let data = await postData('https://doreads-api-dev.onrender.com/auth/register', {
+      let data1 = await postData('', {
         email: Email,
         password: password,
         name: name
       });
-      console.log(data);
-      if (data) {
-        if (data.data) {
-          console.log(data.data);
-          try {
-            if (data.data.response) {
-              //   console.log(data.data.response);
-              //   localStorage.setItem('user', JSON.stringify(data.data.response));
-              window.location.href = '/registerworker';
-            } else {
-              throw new Error('Error');
-            }
-          } catch (error) {
-            console.log(error);
-            setAlertSeverity('error');
-            setAlertMessage('Error, Invalid');
-            setColorAlert('#F53636');
-            if (alert === false) {
-              setAlert(true);
-            }
-          }
-        }
+
+      console.log(data1);
+      if (data1) {
+        console.log(data1.status);
+        window.location.href = '/registerworker';
+        setAlertSeverity('success');
+        setAlertMessage('Register Worker Success');
+        setColorAlert('#259E5D');
       }
     } else {
       if (Email == '' && password == '' && name == '' && password1 == '') {
@@ -176,7 +158,7 @@ function Form() {
           </div>
           <div className="textFields2">
             <img src={Worker} className="Worker1"></img>
-            <BootstrapButton type="submit" text="Login" onClick={loginClickHandler} />
+            <BootstrapButton type="submit" text="Login" onClick={RegisterClickHandler} />
           </div>
         </form>
         <div className="errorContainer">
