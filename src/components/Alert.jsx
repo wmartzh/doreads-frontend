@@ -2,7 +2,15 @@ import Alert from '@mui/material/Alert';
 
 const AlertComp = (props) => {
   return (
-    <Alert variant="standard" severity={props.severity}>
+    <Alert
+      sx={{
+        '& .MuiAlert-icon': {
+          color: 'white'
+        },
+        backgroundColor: props.color
+      }}
+      variant="filled"
+      severity={props.severity}>
       {props.message}
     </Alert>
   );

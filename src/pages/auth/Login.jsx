@@ -12,6 +12,7 @@ const Login = () => {
   const [alert, setAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [alertSeverity, setAlertSeverity] = useState('');
+  const [colorAlert, setColorAlert] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const HandlePasswordTxt = () => {
@@ -38,6 +39,7 @@ const Login = () => {
       console.log(error);
       setAlertSeverity('error');
       setAlertMessage('Error, Invalid Credentials');
+      setColorAlert('red');
       setAlert(!alert);
     }
   };
@@ -66,6 +68,7 @@ const Login = () => {
             console.log(error);
             setAlertSeverity('error');
             setAlertMessage('Error, Invalid Credentials');
+            setColorAlert('#F53636');
             if (alert === false) {
               setAlert(true);
             }
@@ -77,6 +80,7 @@ const Login = () => {
         console.log('Please enter Email and password');
         setAlertSeverity('warning');
         setAlertMessage('Please enter Email and password');
+        setColorAlert('#E9BD1F');
         if (alert === false) {
           setAlert(true);
         }
@@ -84,6 +88,7 @@ const Login = () => {
         console.log('Please enter Email');
         setAlertSeverity('warning');
         setAlertMessage('Please enter Email');
+        setColorAlert('#E9BD1F');
         if (alert === false) {
           setAlert(true);
         }
@@ -91,6 +96,7 @@ const Login = () => {
         console.log('Please enter Password');
         setAlertSeverity('warning');
         setAlertMessage('Please enter Password');
+        setColorAlert('#E9BD1F');
         if (alert === false) {
           setAlert(true);
         }
@@ -133,7 +139,9 @@ const Login = () => {
           </div>
         </form>
         <div className="errorContainer">
-          {alert && <AlertComp severity={alertSeverity} message={alertMessage} />}
+          {alert && (
+            <AlertComp severity={alertSeverity} message={alertMessage} color={colorAlert} />
+          )}
         </div>
       </div>
     </div>
