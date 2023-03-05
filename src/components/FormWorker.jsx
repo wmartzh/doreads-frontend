@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/Registerworker.css';
-import BootstrapButton from '../components/btnBlue.jsx';
+import BootstrapButton from '../components/BtnForm.jsx';
 import axios from 'axios';
 import AlertComp from '../components/Alert.jsx';
 import Worker from '../assets/employee.svg';
@@ -35,7 +35,8 @@ function Form() {
     const data1 = await axios.post(url, {
       name: data['name'],
       email: data['email'],
-      password: data['password']
+      password: data['password'],
+      password1: data['password1']
     });
     return data1;
   };
@@ -46,7 +47,7 @@ function Form() {
     let password = document.getElementById('Password').value;
     let name = document.getElementById('Name').value;
     let password1 = document.getElementById('Password1').value;
-    if (Email !== '' && password !== '' && name !== '' && password1 !== '') {
+    if (Email !== '' && password !== '' && name !== '' && password1 == password) {
       let data1 = await postData('http://localhost:8000/auth/register', {
         email: Email,
         password: password,
@@ -67,11 +68,26 @@ function Form() {
           setAlert(true);
         }
       }
+      if (data1.error) {
+        try {
+          if (data1.response == 'User was already register') {
+            console.log(data1.response);
+            setAlertSeverity('error');
+            setAlertMessage('Email already exists');
+            setColorAlert('#E94F4F');
+            if (alert === false) {
+              setAlert(true);
+            }
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
     } else {
       if (Email == '' && password == '' && name == '' && password1 == '') {
         console.log('Please enter Email , password , name and confirm password');
         setAlertSeverity('warning');
-        setAlertMessage('Please enter Email, password, email and confirm password');
+        setAlertMessage('Please enter Name, Email, Password and Confirm Password');
         setColorAlert('#E9BD1F');
         if (alert === false) {
           setAlert(true);
@@ -164,7 +180,7 @@ function Form() {
           </div>
           <div className="textFields2">
             <img src={Worker} className="Worker1"></img>
-            <BootstrapButton type="submit" text="Login" onClick={RegisterClickHandler} />
+            <BootstrapButton type="submit" text="Register" onClick={RegisterClickHandler} />
           </div>
         </form>
         <div className="errorContainer">

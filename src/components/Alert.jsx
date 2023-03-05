@@ -4,6 +4,7 @@ const AlertComp = (props) => {
   return (
     <Alert
       sx={{
+        fontFamily: ['Open Sans', 'sans-serif'].join(','),
         '& .MuiAlert-icon': {
           color: 'white'
         },
