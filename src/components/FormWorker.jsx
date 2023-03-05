@@ -47,7 +47,7 @@ function Form() {
     let name = document.getElementById('Name').value;
     let password1 = document.getElementById('Password1').value;
     if (Email !== '' && password !== '' && name !== '' && password1 !== '') {
-      let data1 = await postData('', {
+      let data1 = await postData('http://localhost:8000/auth/register', {
         email: Email,
         password: password,
         name: name
