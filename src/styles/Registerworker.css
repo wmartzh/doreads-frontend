@@ -139,3 +139,20 @@
     margin-top: 20px;
     margin-bottom: 25px;
 }
+
+.View{
+  margin: auto;
+}
+
+.Title2{
+  font-size: 16px;
+  margin: 0;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+}
+.Text1{
+  margin: 0;
+  padding: 0px;
+  font-size: 16px;
+}

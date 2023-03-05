@@ -4,7 +4,8 @@ import worker from '../../assets/employee.svg';
 import catalog from '../../assets/service.svg';
 import file from '../../assets/documents.svg';
 import BtnBlue from '../../components/BtnBlue2';
-import BtnYellow from '../../components/BtnYellow';
+import BtnYellow from '../../components/BtnYellowModal';
+import BtnYellow1 from '../../components/BtnYellow';
 
 const home = () => {
   return (
@@ -38,7 +39,7 @@ const home = () => {
                 onboarding a new team member.
               </h4>
             </div>
-            <BtnYellow href={'/registerworker'} text="Register"></BtnYellow>
+            <BtnYellow1 href={'/registerworker'} text="Register"></BtnYellow1>
           </div>
           <div className="Software">
             <h1 className="Title1">Software Overview</h1>
@@ -46,7 +47,7 @@ const home = () => {
             <div className="DescWork">
               <h4 className="Desc2"> Student Management Registration of Fines Book Management</h4>
             </div>
-            <BtnYellow href={'/View'} text="View"></BtnYellow>
+            <BtnYellow text={'View'}></BtnYellow>
           </div>
         </div>
       </div>
