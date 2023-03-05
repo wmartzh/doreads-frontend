@@ -36,24 +36,28 @@ function Items({ text1, text2, text3, href }) {
     <div className="Books1">
       <h1 className="Title">Students</h1>
       <Stack spacing={2}>
-        <Item href={href} onClick={Click}>
-          <div>
-            <Img src={RegisterStudent} />
-          </div>
-          {text1}
-        </Item>
+        <a style={{ outline: 'none', textDecoration: 'none' }} href={'/registerstudents'}>
+          <Item href={href} onClick={Click}>
+            <div>
+              <Img src={RegisterStudent} />
+            </div>
+            {text1}
+          </Item>
+        </a>
         <Item>
           <div>
             <Img src={Penalty} />
           </div>
           {text2}
         </Item>
-        <Item>
-          <div>
-            <Img src={SeeStudent} />
-          </div>
-          {text3}
-        </Item>
+        <a style={{ outline: 'none', textDecoration: 'none' }} href={'/studentsoverview'}>
+          <Item>
+            <div>
+              <Img src={SeeStudent} />
+            </div>
+            {text3}
+          </Item>
+        </a>
       </Stack>
     </div>
   );

@@ -1,55 +1,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-
-.body{
-    background-color: #F5F5F5;
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
- }
- 
-.sideBar{
-     width: 300px;
-     min-height: 100vh;  
- }
-
-
-.Students{ 
-    min-width: 30%;
-    max-height: 78vh;
-    margin-top: 100px;
-    margin-right: 20px;
-    margin-bottom: 50px;		
+.body {
+  background-color: #f5f5f5;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.DescStudents{ 
-    padding: 10px;
-    min-width: 55%;
-    max-height: 79vh;
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-bottom: 129px;
-    margin-right: 20px;
-    border: #000000 1px solid;
-  }
-
-.Title{
-    font-family: 'Open Sans', sans-serif;
-    font-style: semi-bold;;
-    font-size: 16px;
-    padding: 10PX;  
+.sideBar {
+  width: 300px;
+  min-height: 100vh;
 }
 
-.Books1{
-    min-width: 80%;
-    border: 1px solid #000000;
-    padding: 10px;
-    max-height: 78vh;
-    overflow: scroll;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
+.Students {
+  min-width: 30%;
+  max-height: 78vh;
+  margin-top: 100px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
+.DescStudents {
+  padding: 10px;
+  min-width: 55%;
+  max-height: 79vh;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-bottom: 129px;
+  margin-right: 20px;
+  border: #000000 1px solid;
+}
+
+.Title {
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.Books1 {
+  min-width: 80%;
+  border: 1px solid #000000;
+  padding: 10px;
+  max-height: 78vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .Books1::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+/* Register Student */
+
+.form {
+  box-shadow: 0 0 5px hsl(206, 7%, 81%);
+  margin-left: 30px;
+  margin: 140px;
+  min-width: 80vh;
+  min-height: 52%;
+  border-color: #d6d6d6;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  position: absolute;
+  left: 600px;
+  top: 70px;
+}
+
+.studentRegister {
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: -3.5%;
+  width: 438.38px;
+  height: 39px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  display: flex;
+}
+.Input {
+  margin-top: 40px;
+  background-color: #d6d6d6;
+  display: flex;
+  max-height: 40px;
+  width: 438.38px;
+  height: 39px;
+  margin-left: 10%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.LogiStudent {
+  height: 237px;
+  width: 281px;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  left: 510px;
+  top: 100px;
+}
+#RegisterButton {
+  margin-top: 40px;
+  margin-left: 10%;
+  width: 237.51px;
+  height: 45px;
+  position: absolute;
+  left: 445px;
+  top: 325px;
+  background: #394c73;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 39px;
+  text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.TitleRegister {
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+  font-size: 16px;
+  padding: 2px;
+  color: #191919;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+/* margenes de distancias entre el texto y el imput */
+.PaddingStudent h1 {
+  margin-top: 2px;
+  position: relative;
+  left: 4px;
+  top: 35px;
+}
+.PaddingStudent1 h1 {
+  margin-top: 2px;
+  position: relative;
+  left: 4px;
+  top: 35px;
+}
+.PaddingStudent2 h1 {
+  margin-top: 2px;
+  position: relative;
+  left: 4px;
+  top: 35px;
+}
+.PaddingStudent3 h1 {
+  margin-top: 2px;
+  position: relative;
+  left: 4px;
+  top: 35px;
 }

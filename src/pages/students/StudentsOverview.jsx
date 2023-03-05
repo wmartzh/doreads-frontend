@@ -1,7 +1,10 @@
+import Sidebar from '../../components/SideBar';
 const StudentsOverview = () => {
   return (
     <div>
-      <h1>StudentsOverview</h1>
+      <div className="sideBar">
+        <Sidebar />
+      </div>
     </div>
   );
 };
