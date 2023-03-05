@@ -8,7 +8,7 @@ function SidebarLink({ text, img1, href }) {
     <div className="link">
       <Avatar className="icon1" variant="square" src={img1} />
       <h1>
-        <Link classname="link" underline="none" color="#394C73" href={href}>
+        <Link className="link" underline="none" color="#394C73" href={href}>
           {text}
         </Link>
       </h1>
