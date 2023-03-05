@@ -55,11 +55,17 @@ function Form() {
 
       console.log(data1);
       if (data1) {
+        console.log(data1.data);
         console.log(data1.status);
-        window.location.href = '/registerworker';
+      }
+      if (data1.status == 200) {
+        console.log('Register Worker Success');
         setAlertSeverity('success');
         setAlertMessage('Register Worker Success');
         setColorAlert('#259E5D');
+        if (alert === false) {
+          setAlert(true);
+        }
       }
     } else {
       if (Email == '' && password == '' && name == '' && password1 == '') {

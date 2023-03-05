@@ -7,7 +7,8 @@ const AlertComp = (props) => {
         '& .MuiAlert-icon': {
           color: 'white'
         },
-        backgroundColor: props.color
+        backgroundColor: props.color,
+        width: '90%'
       }}
       variant="filled"
       severity={props.severity}>
