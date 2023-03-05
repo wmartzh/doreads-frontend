@@ -108,7 +108,7 @@ function Form() {
         if (alert === false) {
           setAlert(true);
         }
-      } else if (password !== password1) {
+      } else if (password1 !== password) {
         console.log('Password and confirm password should be same');
         setAlertSeverity('warning');
         setAlertMessage('Password and confirm password should be same');
