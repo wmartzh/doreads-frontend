@@ -55,7 +55,7 @@
 
 /* Register Student */
 .ViewRegisterStudent {
-  border: 2px solid #150e9c9d;
+  border: 1px solid #150e9c9d;
   margin: 0 auto;
 }
 .RegiserStuden {
@@ -67,7 +67,7 @@
 }
 
 .HeaderStudent {
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   width: 99%;
   min-width: 168vh;
   height: 10%;
