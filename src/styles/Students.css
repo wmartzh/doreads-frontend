@@ -8,6 +8,7 @@
 }
 
 .sideBar {
+  border: 1px solid #000000;
   width: 300px;
   min-height: 100vh;
 }
@@ -53,46 +54,74 @@
 }
 
 /* Register Student */
+.ViewRegisterStudent {
+  border: 2px solid #150e9c9d;
+  margin: 0 auto;
+}
+.RegiserStuden {
+  border: 1px solid #000000;
+  display: flex;
+  display: row;
+  height: 90vh;
+  height: 99.7vh;
+}
+
+.HeaderStudent {
+  border: 2px solid #000000;
+  width: 99%;
+  min-width: 168vh;
+  height: 10%;
+  display: flex;
+  margin-bottom: 80px;
+}
+.BodyStuden {
+  /* border: 2px solid #821111; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 60%;
+  min-width: 50vh;
+  height: 68%;
+  padding: 8px;
+  margin: 0 auto;
+}
+.AlertStudent {
+  /* border: 1px solid #000000; */
+  display: flex;
+  width: 100%;
+  min-width: 50vh;
+  height: 96%;
+}
 
 .form {
+  display: flex;
+  border: 1px solid #13b35e;
   box-shadow: 0 0 5px hsl(206, 7%, 81%);
   margin-left: 30px;
-  margin: 140px;
-  min-width: 80vh;
-  min-height: 52%;
+  margin: 24px;
+  margin: 20px;
+  background: #d6d6d6;
+  min-width: 90vh;
+  height: 80%;
+  min-height: 70%;
   border-color: #d6d6d6;
   padding: 10px;
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
   background: #ffffff;
-  display: flex;
-  position: absolute;
-  left: 600px;
-  top: 70px;
 }
+/* .studentRegister {
+  border: 1px solid #9f1414;
+} */
 
-.studentRegister {
-  flex-direction: column;
-  margin-top: 10px;
-  margin-left: -3.5%;
-  width: 438.38px;
-  height: 39px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  display: flex;
-}
 .Input {
   margin-top: 40px;
   background-color: #d6d6d6;
   display: flex;
   max-height: 40px;
-  width: 438.38px;
+  width: 428.38px;
+  min-width: 50vh;
   height: 39px;
   margin-left: 10%;
   -webkit-transition: all 0.5s ease-in-out;
@@ -103,25 +132,20 @@
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
 }
-.LogiStudent {
+.ImageStudent {
   height: 237px;
   width: 281px;
-  margin: 5px;
+  margin: 40px;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  position: absolute;
-  left: 510px;
-  top: 100px;
+  display: flex;
 }
-#RegisterButton {
+.LogiStudent {
   margin-top: 40px;
   margin-left: 10%;
-  width: 237.51px;
+  margin: 60px;
+  width: 243.51px;
   height: 45px;
-  position: absolute;
-  left: 445px;
-  top: 325px;
   background: #394c73;
   border-radius: 5px;
   border: none;
@@ -139,7 +163,6 @@
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
-
 .TitleRegister {
   font-family: 'Open Sans', sans-serif;
   font-style: semi-bold;
@@ -157,6 +180,7 @@
   left: 4px;
   top: 35px;
 }
+
 .PaddingStudent1 h1 {
   margin-top: 2px;
   position: relative;
@@ -174,4 +198,113 @@
   position: relative;
   left: 4px;
   top: 35px;
+}
+
+/* Students Overview */
+.ViewStudent {
+  border: 1px solid #ffffff;
+  min-width: 164vh;
+  min-height: 84%;
+  border-color: #ffffff;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  position: absolute;
+  left: 292px;
+  top: 70px;
+}
+.BoardTable {
+  box-shadow: 0 0 5px hsl(206, 7%, 81%);
+  border-collapse: collapse;
+  min-width: 164vh;
+  min-height: 20%;
+}
+
+.BoardTable td {
+  border: 1px solid #d6d6d6;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+  font-size: 16px;
+  stroke: #d6d6d6;
+}
+
+.BoardTable th {
+  border: 1px solid #d6d6d6;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+  font-size: 16px;
+  stroke: #d6d6d6;
+}
+
+.BoardTable tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.BorderBack {
+  border: 1px solid #ffffff;
+  min-width: 164vh;
+  min-height: 84%;
+  border-color: #ffffff;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  position: absolute;
+  left: 292px;
+  top: 70px;
+}
+
+.ButtonEdit {
+  background: #394c73;
+  border-radius: 10px;
+  width: 74px;
+  height: 39px;
+  border: none;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 39px;
+  text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.ButtonBlock {
+  background: #f53636;
+  border-radius: 10px;
+  width: 74px;
+  height: 39px;
+  border: none;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 39px;
+  text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.BorderAll {
+  border: 1px solid #d6d6d6;
+  color: #000000;
+  stroke: #d6d6d6;
+  size: 12px;
 }
