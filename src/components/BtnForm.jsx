@@ -1,17 +1,18 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-function BootstrapButton({ href, text }) {
+function BootstrapButton(props) {
   const BootstrapButton = styled(Button)({
+    margin: 'auto',
     boxShadow: 'none',
     textTransform: 'none',
     border: 'none',
-    width: '200px',
+    width: '240px',
     height: '44px',
     'border-radius': '10px',
     fontSize: 16,
     padding: '6px 12px',
-    lineHeight: 1.5,
+    lineHeight: 1,
     backgroundColor: '#394C73',
     fontFamily: ['Open Sans', 'sans-serif'].join(','),
     '&:hover': {
@@ -26,8 +27,8 @@ function BootstrapButton({ href, text }) {
     }
   });
   return (
-    <BootstrapButton variant="contained" disableRipple href={href}>
-      {text}
+    <BootstrapButton variant="contained" disableRipple href={props.href} onClick={props.onClick}>
+      {props.text}
     </BootstrapButton>
   );
 }
