@@ -19,11 +19,21 @@ const RegisterStudents = () => {
       [name]: value
     }));
   };
+  const token =
+    '[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkb25pc0Bob21lLmNvbSIsImlhdCI6MTY3ODU5NjY1MCwiZXhwIjoxNjgwNjcwMjUwfQ.b_nI_So4SY3lALiHHfVgKD-U05WMozu1yU_11tUBDzk]';
+
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/student/register', postStudent);
+      const response = await axios.post(
+        'http://localhost:8000/student/register',
+        postStudent,
+        config
+      );
       console.log('No resivo nada' + response);
     } catch (error) {
       console.log('No funciono y no estou pasando por axios' + error);

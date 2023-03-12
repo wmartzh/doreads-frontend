@@ -9,8 +9,190 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
+import BootstrapButton from '../../components/btnBlue';
+import BootstrapButtonRed from '../../components/BtnRed';
+
 const rows = [
-  { ID: '1', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 4.0 },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
+  {
+    ID: '1',
+    FullName: 'AdonisA',
+    Carnet: 502130458,
+    Email: 'adoview@home.com',
+    Status: (
+      <div style={{ display: 'unset' }}>
+        <BootstrapButton text="Edit" />
+        <BootstrapButtonRed text="Block" />
+      </div>
+    )
+  },
   { ID: '2', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 4.3 },
   { ID: '3', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 6.0 },
   { ID: '4', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 4.3 },
@@ -32,7 +214,7 @@ const columns = [
 ];
 const StudentsOverview = () => {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(13);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -69,8 +251,13 @@ const StudentsOverview = () => {
                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                     <TableRow key={row.name}>
                       {columns.map((column) => (
-                        <TableCell key={column.id} align={column.align}>
-                          {row[column.id]}
+                        <TableCell
+                          className="ButtonOverrideView"
+                          key={column.id}
+                          align={column.align}>
+                          {column.id === 'Status' && row.Status}
+                          {column.id === 'Action' && row.Action}
+                          {column.id !== 'Status' && column.id !== 'Action' && row[column.id]}
                         </TableCell>
                       ))}
                     </TableRow>

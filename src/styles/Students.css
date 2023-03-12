@@ -65,7 +65,7 @@
   height: 99vh;
 }
 .ViewRegisterStudent {
-  border: 1px solid #0f2aaf9d;
+  border: 1px solid #e3dc239d;
   width: 97px;
   min-width: 167vh;
   min-height: 84%;
@@ -105,10 +105,10 @@
   height: 10%;
 }
 .BodyOveridetudent {
-  border: 1px solid #170780;
+  border: 1px solid #1f8007;
   width: 99%;
   min-width: 166vh;
-  min-height: 88vh;
+  min-height: 98vh;
   height: 10%;
   margin-bottom: 8px;
 }
@@ -215,9 +215,6 @@
   margin-top: 40px;
   margin-left: 10%;
   margin: 60px;
-  width: 243.51px;
-  height: 45px;
-  background: #394c73;
   border-radius: 5px;
   border: none;
   color: #ffffff;
