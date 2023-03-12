@@ -1,10 +1,11 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-function BootstrapButton2({ href, text }) {
+function BootstrapButton2({ text, href }) {
   const BootstrapButton2 = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
+    color: 'white',
     border: 'none',
     width: '200px',
     height: '44px',
@@ -26,11 +27,7 @@ function BootstrapButton2({ href, text }) {
       border: 'none'
     }
   });
-  return (
-    <BootstrapButton2 variant="contained" disableRipple href={href}>
-      {text}
-    </BootstrapButton2>
-  );
+  return <BootstrapButton2 href={href}>{text}</BootstrapButton2>;
 }
 
 export default BootstrapButton2;
