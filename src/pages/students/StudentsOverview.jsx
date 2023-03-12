@@ -265,7 +265,7 @@ const StudentsOverview = () => {
                 </TableBody>
               </Table>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 25]}
+                rowsPerPageOptions={[5, 9, 13]}
                 component="div"
                 count={rows.length}
                 rowsPerPage={rowsPerPage}
