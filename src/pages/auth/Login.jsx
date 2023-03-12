@@ -3,7 +3,7 @@ import userIcon from '../../assets/user.svg';
 import passwordIcon from '../../assets/password.svg';
 import '../../styles/login.css';
 import { useState } from 'react';
-import BootstrapButton from '../../components/btnBlue.jsx';
+import BootstrapButton from '../../components/BtnBlue2.jsx';
 import axios from 'axios';
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 // import axiosApiInstance from '../../components/tokenIntercept';

@@ -1,5 +1,7 @@
 import Sidebar from '../../components/SideBar';
 import graduated from '../../assets/graduated.svg';
+import BootstrapButton from '../../components/btnBlue.jsx';
+import '../../styles/Students.css';
 import React from 'react';
 import axios from 'axios';
 const RegisterStudents = () => {
@@ -52,7 +54,6 @@ const RegisterStudents = () => {
                         onChange={handleInputChange}
                         id="Code"
                         placeholder="Enter Code"
-                        required
                       />
                     </div>
                   </div>
@@ -66,7 +67,6 @@ const RegisterStudents = () => {
                         onChange={handleInputChange}
                         id="Name"
                         placeholder="Enter Name"
-                        required
                       />
                     </div>
                   </div>
@@ -80,7 +80,6 @@ const RegisterStudents = () => {
                         onChange={handleInputChange}
                         id="Email"
                         placeholder="Enter Email"
-                        required
                       />
                     </div>
                   </div>
@@ -94,7 +93,6 @@ const RegisterStudents = () => {
                         value={postStudent.phone}
                         id="Phone"
                         placeholder="Enter Phone"
-                        required
                       />
                     </div>
                   </div>
@@ -102,9 +100,9 @@ const RegisterStudents = () => {
               </div>
               <div className="buttons">
                 <img className="ImageStudent" src={graduated} alt="register" />
-                <button className="LogiStudent" type="submit" id="RegisterButton">
-                  Register
-                </button>
+                <div className="LogiStudent">
+                  <BootstrapButton type="submit" id="LogiStudent" text="Register Student" />
+                </div>
               </div>
             </form>
           </div>
