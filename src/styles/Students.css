@@ -52,52 +52,112 @@
   display: none;
 }
 
-/* Register Student */
-.ViewRegisterStudent {
-  border: 1px solid #0faf329d;
-  margin: 0 auto;
-}
-.RegiserStuden {
-  border: 1px solid #b48714;
+.OverviewStudent {
+  border: 1px solid #b48114;
   display: flex;
   display: row;
-  height: 90vh;
-  height: 99.7vh;
+  height: 100vh;
+}
+.RegiserStuden {
+  border: 1px solid #b48114;
+  display: flex;
+  display: row;
+  height: 99vh;
+}
+.ViewRegisterStudent {
+  border: 1px solid #0f2aaf9d;
+  width: 97px;
+  min-width: 167vh;
+  min-height: 84%;
+  border-color: #ffffff;
+  padding: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  position: absolute;
+  left: 290px;
+  top: 0px;
 }
 
-.HeaderStudent {
-  border: 1px solid #000000;
-  width: 99%;
-  min-width: 168vh;
-  height: 10%;
-  display: flex;
-  margin-bottom: 80px;
-}
-.HeaderOverViewStudent {
-  border: 1px solid #000000;
-  width: 94%;
+/* aca esta el findo de la vista de ViewOverride student*/
+.ViewStudent {
+  border: 1px solid #bd259f;
   min-width: 164vh;
-  height: 10%;
+  min-height: 84%;
+  border-color: #ffffff;
+  padding: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: #ffffff;
   display: flex;
-  margin-bottom: 20px;
+  position: absolute;
+  left: 290px;
+  top: 0px;
 }
 .BodyStuden {
-  /* border: 2px solid #821111; */
-  align-items: center;
-  justify-content: center;
+  border: 1px solid #114a82;
+  width: 80%;
+  min-width: 165vh;
+  min-height: 90%;
+  height: 10%;
+}
+.BodyOveridetudent {
+  border: 1px solid #170780;
+  width: 99%;
+  min-width: 166vh;
+  min-height: 88vh;
+  height: 10%;
+  margin-bottom: 8px;
+}
+.HeaderStudent {
+  border: 1px solid #07802b;
+  width: 94%;
+  min-width: 165vh;
+  min-height: 8vh;
+  height: 10%;
   display: flex;
-  width: 66%;
-  min-width: 50vh;
-  height: 78%;
+  margin-bottom: 8px;
+}
+.OverideHeaderStudent {
+  border: 1px solid #07802b;
+  width: 94%;
+  min-width: 166vh;
+  min-height: 8vh;
+  height: 10%;
+  display: flex;
+  margin-bottom: 8px;
+}
+.CenterRegister {
+  border: 1px solid #07802b;
+  display: flex;
+  padding: 24px;
+  margin: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.TableCenter {
+  border: 1px solid #07802b;
+  display: flex;
   padding: 8px;
-  margin: 0 auto;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 .AlertStudent {
-  /* border: 1px solid #000000; */
+  border: 1px solid #000000;
   display: flex;
-  width: 100%;
-  min-width: 50vh;
-  height: 96%;
+
+  width: 69%;
+  min-height: 65vh;
+  align-items: center;
+  height: 120%;
 }
 
 .form {
@@ -107,7 +167,7 @@
   margin-left: 30px;
   margin: 24px;
   margin: 20px;
-  background: #d6d6d6;
+  background: #a24e0e;
   min-width: 90vh;
   height: 80%;
   min-height: 70%;
@@ -118,9 +178,13 @@
   border-radius: 10px;
   background: #ffffff;
 }
-/* .studentRegister {
+.studentRegister {
   border: 1px solid #9f1414;
-} */
+  display: flex;
+  display: row;
+  height: 52vh;
+  width: 99.7vh;
+}
 
 .Input {
   margin-top: 40px;
@@ -208,21 +272,7 @@
 }
 
 /* Students Overview */
-.ViewStudent {
-  border: 1px solid #ffffff;
-  min-width: 164vh;
-  min-height: 84%;
-  border-color: #ffffff;
-  padding: 15px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: #ffffff;
-  display: flex;
-  position: absolute;
-  left: 292px;
-  top: 70px;
-}
+
 .BoardTable {
   box-shadow: 0 0 5px hsl(206, 7%, 81%);
   border-collapse: collapse;

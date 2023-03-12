@@ -1,5 +1,6 @@
 import Sidebar from '../../components/SideBar';
 import * as React from 'react';
+import '../../styles/Students.css';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,7 +14,13 @@ const rows = [
   { ID: '2', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 4.3 },
   { ID: '3', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 6.0 },
   { ID: '4', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 4.3 },
-  { ID: '5', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 }
+  { ID: '5', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '6', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '7', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '8', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '9', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '10', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 },
+  { ID: '11', FullName: 'AdonisA', Carnet: 502130458, Email: 'adoview@home.com', Status: 3.9 }
 ];
 
 const columns = [
@@ -25,7 +32,7 @@ const columns = [
 ];
 const StudentsOverview = () => {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -37,48 +44,50 @@ const StudentsOverview = () => {
   };
 
   return (
-    <div>
+    <div className="OverviewStudent">
       <div className="sideBar">
         <Sidebar />
       </div>
       <div className="ViewStudent">
-        <div>
-          <div className="HeaderOverViewStudent">
+        <div className="BodyOveridetudent">
+          <div className="OverideHeaderStudent">
             <h1 className="Title">Register Student</h1>
           </div>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-              <TableHead>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell key={column.id} align={column.align}>
-                      {column.label}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-                  <TableRow key={row.name}>
+          <div className="TableCenter">
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+                <TableHead>
+                  <TableRow>
                     {columns.map((column) => (
                       <TableCell key={column.id} align={column.align}>
-                        {row[column.id]}
+                        {column.label}
                       </TableCell>
                     ))}
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <TablePagination
-              rowsPerPageOptions={[5, 10, 25]}
-              component="div"
-              count={rows.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </TableContainer>
+                </TableHead>
+                <TableBody>
+                  {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                    <TableRow key={row.name}>
+                      {columns.map((column) => (
+                        <TableCell key={column.id} align={column.align}>
+                          {row[column.id]}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={rows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </TableContainer>
+          </div>
         </div>
       </div>
     </div>
