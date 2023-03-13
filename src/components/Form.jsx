@@ -4,11 +4,11 @@ import { styled } from '@mui/material/styles';
 
 function Form(props) {
   const label = {
-    'font-family': 'Open Sans, sans-serif',
+    fontFamily: 'Open Sans, sans-serif',
     color: 'black',
-    'font-weight': 'bold',
-    'font-size': '16px',
-    'margin-top': '17px'
+    fontWeight: 'bold',
+    fontSize: '16px',
+    marginTop: '17px'
   };
 
   const CssTextField = styled(TextField)({
