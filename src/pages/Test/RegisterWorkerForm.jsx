@@ -2,6 +2,7 @@ import Sidebar from '../../components/SideBar';
 import Form from '../../components/Form';
 import '../../styles/Registerworker.css';
 import worker from '../../assets/employee.svg';
+import Header from '../../components/Header';
 
 const Book = () => {
   return (
@@ -11,7 +12,7 @@ const Book = () => {
       </div>
       <div className="ContMain">
         <div className="ContHeader">
-          <h1 className="Title">HEADER</h1>
+          <Header TitlePage="Register Worker"></Header>
         </div>
         <div className="ContForm">
           <Form
