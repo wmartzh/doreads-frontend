@@ -27,12 +27,56 @@ const StudentsOverview = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [data, setData] = React.useState([]);
 
+  const token = localStorage.getItem('token');
   React.useEffect(() => {
-    axios.get(baseURL).then((res) => {
-      setData(res.data);
-    });
-  }, []);
+    axios
+      .get(baseURL, {
+        headers: {
+          Authorization: `Bearer ${token}` // Usar el token como valor para el header "Authorization"
+        }
+      })
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((error) => {
+        console.log(error); // Manejar el error aquí
+      });
+  }, [token]); // Agregar "token" como dependencia
+  // const [token, setToken] = React.useState('');
 
+  // const handleSetToken = () => {
+  //   const token = prompt(
+  //     'Please enter the access token:',
+  //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkb25pc0Bob21lLmNvbSIsImlhdCI6MTY3ODY2NDQ1MSwiZXhwIjoxNjgwNzM4MDUxfQ.x2aZ2P8a7vQi-nfVrRxlH46q5wPGdo39Tk4G1HPB6Hc'
+  //   );
+  //   if (token !== null && token !== '') {
+  //     localStorage.setItem('token', token);
+  //     setToken(token);
+  //   }
+  // };
+
+  // React.useEffect(() => {
+  //   const storedToken = localStorage.getItem('token');
+  //   if (storedToken) {
+  //     setToken(storedToken);
+  //   } else {
+  //     handleSetToken();
+  //   }
+  // }, []);
+
+  // React.useEffect(() => {
+  //   if (token) {
+  //     axios
+  //       .get(baseURL, {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`
+  //         }
+  //       })
+  //       .then((res) => {
+  //         setData(res.data);
+  //       });
+  //   }
+  // }, [token]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
