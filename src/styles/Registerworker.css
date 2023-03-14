@@ -20,7 +20,7 @@
     padding: 10px;
     height: 70vh;
     margin: auto;
-    border: #0c38d6 1px solid;
+
 }
 
 .Label{
@@ -42,26 +42,24 @@
     padding: 10px;
     margin-bottom: 10px;
     width: 98%;
+    height: 80%;
     box-shadow: 0 0 5px hsl(206, 7%, 81%);
     display: flex;
 }
 
 .textFields1{
+    padding-top: 30px;
+    padding-left: 10px;
     width: 50%;
     display: flex;
     flex-direction: column;
-    height: 75%;
     gap: 10px;
-    padding: 10px;
 }
 
 .textFields2{
     width: 50%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    height: 75%;
-    gap: 2px;
 }
 
 .input1[type=text] , .input1[type=password] {
@@ -133,11 +131,9 @@
 }
 
 .Worker1{
-    width: 400px;
-    height: 350px;
+    width: 70%;
+    height: 40%px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 25px;
 }
 
 .View{
@@ -155,4 +151,14 @@
   margin: 0;
   padding: 0px;
   font-size: 16px;
+}
+
+.Center{
+  display: grid;
+  margin: auto;
+}
+
+.CenterButton{
+  padding: 10px;
+  margin: auto;
 }

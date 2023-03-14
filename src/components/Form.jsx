@@ -41,7 +41,7 @@ function Form(props) {
 
   return (
     <div className="">
-      <div className="">
+      <div className="ContForm">
         <form id="form1">
           <div className="textFields1">
             <InputLabel style={label}>{props.FirstInputTitleText}</InputLabel>
@@ -78,17 +78,21 @@ function Form(props) {
             />
           </div>
           <div className="textFields2">
-            <img src={props.ImageForm} className="Worker1"></img>
-            <BootstrapButton
-              height="44px"
-              width="240px"
-              type="submit"
-              margin="auto"
-              color={props.colorButton}
-              colorHover={props.colorHoverButton}
-              TextInButton="Register"
-              onClick={props.onClick}
-            />
+            <div className="Center">
+              <img src={props.ImageForm} className="Worker1"></img>
+              <div className="CenterButton">
+                <BootstrapButton
+                  height="44px"
+                  width="230px"
+                  type="submit"
+                  margin="auto"
+                  color={props.colorButton}
+                  colorHover={props.colorHoverButton}
+                  TextInButton="Register"
+                  onClick={props.onClick}
+                />
+              </div>
+            </div>
           </div>
         </form>
       </div>

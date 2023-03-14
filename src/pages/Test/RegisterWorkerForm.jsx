@@ -14,7 +14,7 @@ const Book = () => {
         <div className="ContHeader">
           <Header TitlePage="Register Worker"></Header>
         </div>
-        <div className="ContForm">
+        <div className="">
           <Form
             FirstInputTitleText="Worker Name"
             FirstInputholder="Worker Name"
