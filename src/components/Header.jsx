@@ -5,8 +5,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 
 export default function ButtonAppBar(props) {
+  const Back = () => {
+    window.history.back();
+  };
+
   const Header = {
     backgroundColor: '#F5F5F5',
     height: '100%',
@@ -23,9 +28,13 @@ export default function ButtonAppBar(props) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={Header} position="static">
         <Toolbar style={Header}>
-          <Typography variant="h6" style={font} component="div" sx={{ flexGrow: 1 }}>
+          <Link
+            onClick={Back}
+            style={font}
+            component="div"
+            sx={{ flexGrow: 1, cursor: 'pointer', color: 'white', 'text-decoration': 'none' }}>
             Back
-          </Typography>
+          </Link>
           <Typography variant="h4" style={font} component="div" sx={{ flexGrow: 1 }}>
             {props.TitlePage}
           </Typography>
