@@ -1,5 +1,5 @@
 import Sidebar from '../../components/SideBar';
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/Students.css';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -16,67 +16,55 @@ import BootstrapButtonRed from '../../components/BtnRed';
 const baseURL = 'http://localhost:8000/student';
 const columns = [
   { id: 'id', label: 'ID', align: 'left' },
-  { id: 'fullname', label: 'FullName', align: 'right' },
-  { id: 'carner', label: 'Carnet', align: 'right' },
+  { id: 'code', label: 'Code', align: 'right' },
+  { id: 'name', label: 'Name', align: 'right' },
   { id: 'email', label: 'Email', align: 'right' },
-  { id: 'status', label: 'Status', align: 'right' }
+  { id: 'phone', label: 'Phone', align: 'right' },
+  { id: 'status', label: 'Status', align: 'right' },
+  { id: 'createdAt', label: 'CreatedAt', align: 'right' },
+  { id: 'updatedAt', label: 'UpdatedAt', align: 'right' }
 ];
 
 const StudentsOverview = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [data, setData] = React.useState([]);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [data, setData] = useState([]);
+  const [info, setInfo] = useState({});
 
   const token = localStorage.getItem('token');
-  React.useEffect(() => {
+  useEffect(() => {
     axios
       .get(baseURL, {
         headers: {
-          Authorization: `Bearer ${token}` // Usar el token como valor para el header "Authorization"
+          Authorization: `Bearer ${token}`
         }
       })
       .then((res) => {
-        setData(res.data);
+        setData(res.data.data);
+        setInfo(res.data.info);
+        console.log(res.data);
+        const tableBody = document.getElementById('table-body');
+        if (tableBody) {
+          let html = '';
+          for (let i = 0; i < data.length; i++) {
+            console.log(
+              `ID: ${data[i].id}, Code: ${data[i].code}, Name: ${data[i].name}, Email: ${data[i].email}, Phone: ${data[i].phone}`
+            );
+            html += `<tr>
+                    <td>${data[i].id}</td>
+                    <td>${data[i].code}</td>
+                    <td>${data[i].name}</td>
+                    <td>${data[i].email}</td>
+                    <td>${data[i].phone}</td>
+                </tr>`;
+          }
+          tableBody.innerHTML = html;
+        }
       })
       .catch((error) => {
-        console.log(error); // Manejar el error aquí
+        console.log(error);
       });
-  }, [token]); // Agregar "token" como dependencia
-  // const [token, setToken] = React.useState('');
-
-  // const handleSetToken = () => {
-  //   const token = prompt(
-  //     'Please enter the access token:',
-  //     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkb25pc0Bob21lLmNvbSIsImlhdCI6MTY3ODY2NDQ1MSwiZXhwIjoxNjgwNzM4MDUxfQ.x2aZ2P8a7vQi-nfVrRxlH46q5wPGdo39Tk4G1HPB6Hc'
-  //   );
-  //   if (token !== null && token !== '') {
-  //     localStorage.setItem('token', token);
-  //     setToken(token);
-  //   }
-  // };
-
-  // React.useEffect(() => {
-  //   const storedToken = localStorage.getItem('token');
-  //   if (storedToken) {
-  //     setToken(storedToken);
-  //   } else {
-  //     handleSetToken();
-  //   }
-  // }, []);
-
-  // React.useEffect(() => {
-  //   if (token) {
-  //     axios
-  //       .get(baseURL, {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`
-  //         }
-  //       })
-  //       .then((res) => {
-  //         setData(res.data);
-  //       });
-  //   }
-  // }, [token]);
+  }, [token]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -111,19 +99,20 @@ const StudentsOverview = () => {
                 <TableBody>
                   {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                     <TableRow key={row.id}>
-                      {columns.map((column) => (
-                        <TableCell
-                          className="ButtonOverrideView"
-                          key={column.id}
-                          align={column.align}>
-                          {column.id === 'Status' && (
-                            <div>
-                              <BootstrapButton text="edit" />
-                              <BootstrapButtonRed text="Block" />
-                            </div>
-                          )}
-                        </TableCell>
-                      ))}
+                      <TableCell>{row.id}</TableCell>
+                      <TableCell>{row.code}</TableCell>
+                      <TableCell>{row.name}</TableCell>
+                      <TableCell>{row.email}</TableCell>
+                      <TableCell>{row.phone}</TableCell>
+                      <TableCell>{row.status}</TableCell>
+                      <TableCell>{row.createdAt}</TableCell>
+                      <TableCell>{row.updatedAt}</TableCell>
+                      <TableCell>
+                        <div>
+                          <BootstrapButton text="edit" />
+                          <BootstrapButtonRed text="Block" />
+                        </div>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -136,6 +125,12 @@ const StudentsOverview = () => {
                 page={page}
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
+                labelRowsPerPage="Rows per page"
+                labelDisplayedRows={({ from, to, count }) =>
+                  `${from}-${to} of ${count}${
+                    info.totalCount !== undefined ? ` (${info.totalCount} total)` : ''
+                  }`
+                }
               />
             </TableContainer>
           </div>
