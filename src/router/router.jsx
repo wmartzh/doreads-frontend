@@ -11,6 +11,10 @@ import RegisterFines from '../pages/fines/RegisterFine';
 import RegisterWorkers from '../pages/workers/RegisterWorker';
 import StudentsOverview from '../pages/students/StudentsOverview';
 import RegisterStudents from '../pages/students/RegisterStudents';
+import Books1 from '../pages/Test/BooksTest';
+import HomeTest from '../pages/Test/HomeTest';
+import TestWorker from '../pages/Test/RegisterWorkerForm';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -59,6 +63,18 @@ const router = createBrowserRouter([
   {
     path: '/registerworker',
     element: <RegisterWorkers />
+  },
+  {
+    path: '/BookTest',
+    element: <Books1 />
+  },
+  {
+    path: '/homeTest',
+    element: <HomeTest />
+  },
+  {
+    path: '/workerTest',
+    element: <TestWorker />
   }
 ]);
 export default router;

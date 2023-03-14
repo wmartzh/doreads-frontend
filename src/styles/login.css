@@ -92,7 +92,7 @@
 .loginIcon:hover{
     background-color: #d6e3fe;
 }
-input[type=text] , input[type=password] {
+.input2[type=text] , .input2[type=password] {
     font-family: 'Open Sans', sans-serif;
     background-color: #f6f6f6;
     border: none;
@@ -117,11 +117,11 @@ input[type=text] , input[type=password] {
     border-bottom: 2px solid #394c73;
     outline: none;
   }
-  input[type=text]:focus , input[type=password]:focus ,input[type=email]:focus{
+  .input2[type=text]:focus , input[type=password]:focus ,input[type=email]:focus{
     outline: none;
   } 
   
-  input[type=text], input[type=password] :placeholder {
+  .input2[type=text], input[type=password] :placeholder {
     color: #000000;
   }
   #loginButton{
