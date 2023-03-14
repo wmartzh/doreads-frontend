@@ -1,4 +1,3 @@
-import { Avatar } from '@mui/material';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -6,10 +5,17 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
+import Badge from '@mui/material/Badge';
+import BookIcon from '@mui/icons-material/Book';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function ButtonAppBar(props) {
   const Back = () => {
     window.history.back();
+  };
+
+  const Book = {
+    color: '#394C73'
   };
 
   const Header = {
@@ -38,13 +44,14 @@ export default function ButtonAppBar(props) {
           <Typography variant="h4" style={font} component="div" sx={{ flexGrow: 1 }}>
             {props.TitlePage}
           </Typography>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit">
-            <Avatar />
+          <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+            <Badge badgeContent={2} color="error">
+              {' '}
+              <BookIcon style={Book} />
+            </Badge>
+          </IconButton>
+          <IconButton size="large" aria-label="show 17 new notifications">
+            <AccountCircleIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
