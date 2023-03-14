@@ -5,6 +5,18 @@ import Img from '../components/Box.jsx';
 import '../styles/Books.css';
 
 function Items(props) {
+  const href1 = () => {
+    window.location.href = props.href1;
+  };
+
+  const href2 = () => {
+    window.location.href = props.href2;
+  };
+
+  const href3 = () => {
+    window.location.href = props.href3;
+  };
+
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#f5f5f5',
     boxShadow: '0 0 19px hsl(206, 2%, 85%)',
@@ -31,19 +43,19 @@ function Items(props) {
     <div className="Books1">
       <h1 className="Title">{props.title}</h1>
       <Stack spacing={2}>
-        <Item href={props.href}>
+        <Item onClick={href1}>
           <div>
             <Img src={props.ImageFirstItem} />
           </div>
           {props.TextFirstItem}
         </Item>
-        <Item>
+        <Item onClick={href2}>
           <div>
             <Img src={props.ImageSecondItem} />
           </div>
           {props.TextSecondItem}
         </Item>
-        <Item>
+        <Item onClick={href3}>
           <div>
             <Img src={props.ImageThirdItem} />
           </div>

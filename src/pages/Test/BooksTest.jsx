@@ -14,6 +14,9 @@ const Book = () => {
       <div className="Cont">
         <div className="Books">
           <Items
+            href1="/importbook"
+            href2="/loanedbooks"
+            href3="/registerbook"
             color="#394C73"
             TextFirstItem="Import Book"
             TextSecondItem="On Loan"
