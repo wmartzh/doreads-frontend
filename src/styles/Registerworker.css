@@ -12,15 +12,14 @@
     display: flex;
     width: 99.9%;
     height: 10%;
-    margin-bottom: 80px;
 }
 
 .ContForm{
-    width: 1000px;
+    width: 98.5%;
+    margin-top: 100px;
     padding: 10px;
-    height: 70vh;
-    margin: auto;
-
+    max-height: 85%;
+    overflow: hidden;
 }
 
 .Label{
@@ -39,24 +38,26 @@
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background-color: #FEFEFF;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 98%;
-    height: 80%;
+    padding: 30px;
+    margin: auto;
+    width: 60%;
+    max-height: 80vh;
     box-shadow: 0 0 5px hsl(206, 7%, 81%);
     display: flex;
+    overflow: hidden;
 }
 
 .textFields1{
     padding-top: 30px;
-    padding-left: 10px;
+    padding-bottom: 30px;
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .textFields2{
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: 50%;
     display: flex;
     flex-direction: column;

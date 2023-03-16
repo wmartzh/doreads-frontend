@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-function BootstrapButton(props) {
-  const BootstrapButton = styled(Button)({
+function Buttons(props) {
+  const Button1 = styled(Button)({
     margin: props.margin,
     boxShadow: 'none',
     textTransform: 'none',
@@ -20,15 +20,15 @@ function BootstrapButton(props) {
     }
   });
   return (
-    <BootstrapButton
+    <Button1
       variant="contained"
       disableRipple
       href={props.href}
       onClick={props.onClick}
       type={props.type}>
       {props.TextInButton}
-    </BootstrapButton>
+    </Button1>
   );
 }
 
-export default BootstrapButton;
+export default Buttons;
