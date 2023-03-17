@@ -2,10 +2,10 @@ import Sidebar from '../../components/SideBar';
 import graduated from '../../assets/graduated.svg';
 import BootstrapButton from '../../components/btnBlue.jsx';
 import '../../styles/Students.css';
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 const RegisterStudents = () => {
-  const [postStudent, setPostStudent] = React.useState({
+  const [postStudent, setPostStudent] = useState({
     code: '',
     name: '',
     email: '',
@@ -19,24 +19,19 @@ const RegisterStudents = () => {
       [name]: value
     }));
   };
-  const token =
-    '[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkb25pc0Bob21lLmNvbSIsImlhdCI6MTY3ODU5NjY1MCwiZXhwIjoxNjgwNjcwMjUwfQ.b_nI_So4SY3lALiHHfVgKD-U05WMozu1yU_11tUBDzk]';
-
-  const config = {
-    headers: { Authorization: `Bearer ${token}` }
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const token = localStorage.getItem('token');
     try {
-      const response = await axios.post(
-        'http://localhost:8000/student/register',
-        postStudent,
-        config
-      );
-      console.log('No resivo nada' + response);
+      const response = await axios.post('http://localhost:8000/student/register', postStudent, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      console.log('La respuesta de la solicitud POST es: ', response);
     } catch (error) {
-      console.log('No funciono y no estou pasando por axios' + error);
+      console.log('Ocurrió un error durante la solicitud POST: ', error);
     }
   };
 

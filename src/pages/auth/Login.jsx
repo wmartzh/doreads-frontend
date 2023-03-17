@@ -3,11 +3,7 @@ import userIcon from '../../assets/user.svg';
 import passwordIcon from '../../assets/password.svg';
 import '../../styles/login.css';
 import { useState } from 'react';
-// import BootstrapButton from '../../components/BtnBlue2.jsx';
-// import axios from 'axios';
 import BootstrapButton from '../../components/btnBlue.jsx';
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-// import axiosApiInstance from '../../components/tokenIntercept';
 import AlertComp from '../../components/Alert.jsx';
 import { authenticate } from '../../services/auth';
 
@@ -21,9 +17,6 @@ const Login = () => {
   const [error, setError] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [showPassword, setShowPassword] = useState(false);
-
-  // useEffect(() => {}, [loginClickHandler]);
 
   const loginClickHandler = async (e) => {
     e.preventDefault();

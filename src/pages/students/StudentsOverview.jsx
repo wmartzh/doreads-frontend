@@ -29,7 +29,6 @@ const StudentsOverview = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [data, setData] = useState([]);
-  const [info, setInfo] = useState({});
 
   const token = localStorage.getItem('token');
   useEffect(() => {
@@ -41,7 +40,6 @@ const StudentsOverview = () => {
       })
       .then((res) => {
         setData(res.data.data);
-        setInfo(res.data.info);
         console.log(res.data);
         const tableBody = document.getElementById('table-body');
         if (tableBody) {
@@ -125,12 +123,6 @@ const StudentsOverview = () => {
                 page={page}
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
-                labelRowsPerPage="Rows per page"
-                labelDisplayedRows={({ from, to, count }) =>
-                  `${from}-${to} of ${count}${
-                    info.totalCount !== undefined ? ` (${info.totalCount} total)` : ''
-                  }`
-                }
               />
             </TableContainer>
           </div>
