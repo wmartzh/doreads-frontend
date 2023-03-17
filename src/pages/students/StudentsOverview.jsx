@@ -30,8 +30,8 @@ const StudentsOverview = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [data, setData] = useState([]);
 
-  const token = localStorage.getItem('token');
   useEffect(() => {
+    const token = localStorage.getItem('token');
     axios
       .get(baseURL, {
         headers: {
@@ -62,7 +62,7 @@ const StudentsOverview = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [token]);
+  }, []);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
