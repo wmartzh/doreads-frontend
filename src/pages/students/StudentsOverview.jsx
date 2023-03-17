@@ -51,40 +51,6 @@ const StudentsOverview = () => {
       setData(fetchedData);
     });
   }, []);
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   axios
-  //     .get(baseURL, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`
-  //       }
-  //     })
-  //     .then((res) => {
-  //       setData(res.data.data);
-  //       console.log(res.data);
-  //       const tableBody = document.getElementById('table-body');
-  //       if (tableBody) {
-  //         let html = '';
-  //         for (let i = 0; i < data.length; i++) {
-  //           console.log(
-  //             `ID: ${data[i].id}, Code: ${data[i].code}, Name: ${data[i].name}, Email: ${data[i].email}, Phone: ${data[i].phone}`
-  //           );
-  //           html += `<tr>
-  //                   <td>${data[i].id}</td>
-  //                   <td>${data[i].code}</td>
-  //                   <td>${data[i].name}</td>
-  //                   <td>${data[i].email}</td>
-  //                   <td>${data[i].phone}</td>
-  //               </tr>`;
-  //         }
-  //         tableBody.innerHTML = html;
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
