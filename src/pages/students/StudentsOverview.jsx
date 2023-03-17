@@ -9,11 +9,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
-import axios from 'axios';
 import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
+import fetchData from '../../services/StudentOverview';
 
-const baseURL = 'http://localhost:8000/student';
 const columns = [
   { id: 'id', label: 'ID', align: 'left' },
   { id: 'code', label: 'Code', align: 'right' },
@@ -24,23 +23,7 @@ const columns = [
   { id: 'createdAt', label: 'CreatedAt', align: 'right' },
   { id: 'updatedAt', label: 'UpdatedAt', align: 'right' }
 ];
-const fetchData = () => {
-  const token = localStorage.getItem('token');
-  return axios
-    .get(baseURL, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    .then((res) => {
-      console.log(res.data);
-      return res.data.data;
-    })
-    .catch((error) => {
-      console.log(error);
-      return [];
-    });
-};
+
 const StudentsOverview = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
