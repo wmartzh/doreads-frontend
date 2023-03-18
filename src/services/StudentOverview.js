@@ -1,16 +1,16 @@
 import axios from 'axios';
-const baseURL = 'http://localhost:8000/student';
-const fetchData = () => {
+const baseURL = `${process.env.REACT_APP_API_HOST}/student`;
+const fetchData = (page) => {
   const token = localStorage.getItem('token');
   return axios
-    .get(baseURL, {
+    .get(`${baseURL}?page=${page + 1}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
     .then((res) => {
       console.log(res.data);
-      return res.data.data;
+      return res.data;
     })
     .catch((error) => {
       console.log(error);

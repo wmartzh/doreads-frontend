@@ -12,7 +12,6 @@ import TablePagination from '@mui/material/TablePagination';
 import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
 import fetchData from '../../services/StudentOverview';
-
 const columns = [
   { id: 'id', label: 'ID', align: 'left' },
   { id: 'code', label: 'Code', align: 'right' },
@@ -26,15 +25,24 @@ const columns = [
 
 const StudentsOverview = () => {
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [data, setData] = useState([]);
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetchData(setData).then((fetchedData) => {
+    fetchData(page).then((response) => {
+      const { data: fetchedData, info: paginationInfo } = response;
       setData(fetchedData);
+      setInfo(paginationInfo);
     });
   }, []);
   const handleChangePage = (event, newPage) => {
+    console.log(newPage);
+    fetchData(newPage).then((response) => {
+      const { data: fetchedData, info: paginationInfo } = response;
+      setData(fetchedData);
+      setInfo(paginationInfo);
+    });
     setPage(newPage);
   };
 
@@ -66,7 +74,7 @@ const StudentsOverview = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                  {data.map((row) => (
                     <TableRow key={row.id}>
                       <TableCell>{row.id}</TableCell>
                       <TableCell>{row.code}</TableCell>
@@ -87,9 +95,9 @@ const StudentsOverview = () => {
                 </TableBody>
               </Table>
               <TablePagination
-                rowsPerPageOptions={[5, 9, 13]}
+                rowsPerPageOptions={[10, 20, 30]}
                 component="div"
-                count={data.length}
+                count={info.count}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onPageChange={handleChangePage}
