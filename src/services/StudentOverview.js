@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axiosInstance from 'axios';
 const baseURL = `${process.env.REACT_APP_API_HOST}/student`;
+
 const fetchData = (page) => {
   const token = localStorage.getItem('token');
-  return axios
-    .get(`${baseURL}?page=${page + 1}`, {
+  return axiosInstance
+    .get(`${baseURL}/ student?page=${page + 1}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
