@@ -11,9 +11,9 @@ import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
 import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
-import fetchData from '../../services/StudentOverview';
+import { getStudents } from '../../services/student';
 
-const columns = [
+const headers = [
   { id: 'id', label: 'ID', align: 'left' },
   { id: 'code', label: 'Code', align: 'right' },
   { id: 'name', label: 'Name', align: 'right' },
@@ -26,14 +26,23 @@ const columns = [
 
 const StudentsOverview = () => {
   const [page, setPage] = useState(0);
+  const [total, setTotal] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetchData(setData).then((fetchedData) => {
-      setData(fetchedData);
+  const updateList = () => {
+    getStudents(page, rowsPerPage).then((data) => {
+      setData(data.data);
+      setRowsPerPage(data.info.pageSize);
+      setPage(data.info.currentPage);
+      setTotal(data.info.count);
     });
-  }, []);
+  };
+
+  useEffect(() => {
+    updateList();
+  }, [page]);
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -58,7 +67,7 @@ const StudentsOverview = () => {
               <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow>
-                    {columns.map((column) => (
+                    {headers.map((column) => (
                       <TableCell key={column.id} align={column.align}>
                         {column.label}
                       </TableCell>
@@ -66,7 +75,7 @@ const StudentsOverview = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                  {data.map((row) => (
                     <TableRow key={row.id}>
                       <TableCell>{row.id}</TableCell>
                       <TableCell>{row.code}</TableCell>
@@ -87,9 +96,9 @@ const StudentsOverview = () => {
                 </TableBody>
               </Table>
               <TablePagination
-                rowsPerPageOptions={[5, 9, 13]}
+                rowsPerPageOptions={[5, 10, 20]}
                 component="div"
-                count={data.length}
+                count={total}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onPageChange={handleChangePage}
