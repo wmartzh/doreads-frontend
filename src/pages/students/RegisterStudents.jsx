@@ -1,4 +1,3 @@
-import Sidebar from '../../components/SideBar';
 import graduated from '../../assets/graduated.svg';
 import BootstrapButton from '../../components/btnBlue.jsx';
 import '../../styles/Students.css';
@@ -62,9 +61,6 @@ const RegisterStudents = () => {
 
   return (
     <div className="RegiserStuden">
-      <div className="sideBar">
-        <Sidebar />
-      </div>
       <div className="ViewRegisterStudent">
         <div className="BodyStuden">
           <div className="HeaderStudent">
