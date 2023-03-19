@@ -9,7 +9,7 @@ function SideBar() {
   return (
     <div className="sidebar">
       <img src={foto} className="icon"></img>
-      <SidebarLink text="Home" img1={home} href="/" />
+      <SidebarLink text="Home" img1={home} href="/home" />
       <SidebarLink text="Books" img1={openbooks} href="/books" />
       <SidebarLink text="Students" img1={stud} href="/students" />
     </div>

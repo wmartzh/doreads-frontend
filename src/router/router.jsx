@@ -23,7 +23,7 @@ export const unprotectedRoutes = [
 
 export const protectedRoutes = [
   {
-    path: '/',
+    path: '/home',
     element: <Home />
   },
 

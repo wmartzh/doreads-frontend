@@ -3,7 +3,7 @@ import userIcon from '../../assets/user.svg';
 import passwordIcon from '../../assets/password.svg';
 import '../../styles/login.css';
 import { useState } from 'react';
-import BootstrapButton from '../../components/btnBlue.jsx';
+import Button from '../../components/Button.jsx';
 import AlertComp from '../../components/Alert.jsx';
 import { authenticate } from '../../services/auth';
 // import { AuthContext } from '../../context/AuthContext';
@@ -69,12 +69,7 @@ const Login = () => {
               />
               <img src={passwordIcon} alt="" className="loginIcon" id="passwordIcon" />
             </div>
-            <BootstrapButton
-              type="submit"
-              id="loginButton"
-              text="Login"
-              onClick={loginClickHandler}
-            />
+            <Button type="submit" id="loginButton" text="Login" onClick={loginClickHandler} />
           </div>
         </form>
         <div className="errorContainer">
