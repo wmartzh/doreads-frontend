@@ -3,6 +3,7 @@ import ImportBook from '../../assets/online-learning.svg';
 import Loan from '../../assets/education1.svg';
 import Register from '../../assets/education2.svg';
 import '../../styles/Books.css';
+import TextDesc from '../../components/Text';
 
 const Book = () => {
   return (
@@ -25,6 +26,20 @@ const Book = () => {
         </div>
         <div className="DescBooks">
           <h1 className="Title">Description</h1>
+          <TextDesc
+            color="#394C73"
+            TextTitle="Import Book"
+            TextParagraph="In this section you can
+            import a book manually with all
+            their corresponding fields, the
+            system will verify your peace of mind."
+            TextTitle2="On Loan"
+            TextParagraph2="In this section you can see
+            the books that are on loan and
+            the student who has them."
+            TextTitle3="Register Book"
+            TextParagraph3="In this section you can register a book manually with all
+            its corresponding fields, the system will verify your peace of mind"></TextDesc>
         </div>
       </div>
     </>

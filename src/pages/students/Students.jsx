@@ -1,45 +1,47 @@
-import Items from '../../components/Stack2';
-import '../../styles/Students.css';
+import Items from '../../components/StackItems';
+import RegisterStudent from '../../assets/registerstu.svg';
+import Penalty from '../../assets/multa.svg';
+import SeeStudent from '../../assets/graduated2.svg';
+import TextDesc from '../../components/Text';
 
-const Student = () => {
+const Students = () => {
   return (
     <>
-      <div className="DescStudents">
-        <div>
-          <h1 className="Title">
-            <span>Register Student:</span> ipsum dolor sit amet consectetur adipisicing elit. Ut
-            minima fugiat beatae soluta doloribus. Nostrum impedit obcaecati fugiat laborum vero
-            nesciunt minima nisi, voluptatibus ullam hic sint deserunt officia corporis. Lorem
-            ipsum, dolor sit amet consectetur adipisicing elit. Eaque possimus exercitationem
-            maiores autem libero? Fuga, repellendus ut unde porro fugiat earum nesciunt
-            exercitationem, consequuntur aliquid cupiditate sequi saepe suscipit numquam!
-          </h1>
+      <div className="ContentStudents">
+        <div className="Students">
+          <Items
+            title="Students"
+            href1="/registerstudents"
+            href2="/fines"
+            href3="/studentsoverview"
+            color="#E9BD1F"
+            TextFirstItem="Register Student"
+            TextSecondItem="Penalty Fee"
+            TextThirdItem="View Students"
+            ImageFirstItem={RegisterStudent}
+            ImageSecondItem={Penalty}
+            ImageThirdItem={SeeStudent}
+          />
         </div>
-        <div>
-          <h1 className="Title">
-            <span>Student Fines:</span> ipsum dolor sit amet consectetur adipisicing elit. Ut minima
-            fugiat beatae soluta doloribus. Nostrum impedit obcaecati fugiat laborum vero nesciunt
-            minima nisi, voluptatibus ullam hic sint deserunt officia corporis. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Perferendis ducimus possimus odit eos deserunt
-            neque quia, adipisci laudantium accusantium alias earum dolorem expedita molestiae
-            voluptas perspiciatis sapiente cum quae fugiat.
-          </h1>
+        <div className="DescStudents">
+          <h1 className="Title">Description</h1>
+          <TextDesc
+            color="#E9BD1F"
+            TextTitle="Register Student"
+            TextParagraph="In this section you 
+            can register a student manually with
+             all their corresponding fields, 
+            the system will verify your peace of mind."
+            TextTitle2="Penalty Fee"
+            TextParagraph2="In this section you can
+              see the students who have a penalty
+                and the amount of the penalty."
+            TextTitle3="View Students"
+            TextParagraph3="In this section you can see
+              all the students registered in the system."></TextDesc>
         </div>
-        <div>
-          <h1 className="Title">
-            <span>View Student:</span> ipsum dolor sit amet consectetur adipisicing elit. Ut minima
-            fugiat beatae soluta doloribus. Nostrum impedit obcaecati fugiat laborum vero nesciunt
-            minima nisi, voluptatibus ullam hic sint deserunt officia corporis. Lorem, ipsum dolor
-            sit amet consectetur adipisicing elit. Explicabo beatae eius sequi doloribus fuga vitae
-            ratione sit, unde repellendus ex excepturi minus, neque reiciendis corrupti recusandae,
-            assumenda praesentium odit labore?
-          </h1>
-        </div>
-      </div>
-      <div className="Students">
-        <Items text1="Register Students" text2="Penalty Fee" text3="See Student" />
       </div>
     </>
   );
 };
-export default Student;
+export default Students;
