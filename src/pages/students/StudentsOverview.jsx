@@ -1,4 +1,3 @@
-import Sidebar from '../../components/SideBar';
 import React, { useEffect, useState } from 'react';
 import '../../styles/Students.css';
 import Table from '@mui/material/Table';
@@ -48,10 +47,7 @@ const StudentsOverview = () => {
   };
 
   return (
-    <div className="OverviewStudent">
-      <div className="sideBar">
-        <Sidebar />
-      </div>
+    <>
       <div className="ViewStudent">
         <div className="BodyOveridetudent">
           <div className="OverideHeaderStudent">
@@ -105,7 +101,7 @@ const StudentsOverview = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default StudentsOverview;
