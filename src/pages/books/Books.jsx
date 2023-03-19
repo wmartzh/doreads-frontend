@@ -3,7 +3,7 @@ import ImportBook from '../../assets/online-learning.svg';
 import Loan from '../../assets/education1.svg';
 import Register from '../../assets/education2.svg';
 import '../../styles/Books.css';
-import TextDesc from '../../components/Text';
+import TextDesc from '../../components/Texts';
 
 const Book = () => {
   return (

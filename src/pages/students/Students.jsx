@@ -2,7 +2,7 @@ import Items from '../../components/StackItems';
 import RegisterStudent from '../../assets/registerstu.svg';
 import Penalty from '../../assets/multa.svg';
 import SeeStudent from '../../assets/graduated2.svg';
-import TextDesc from '../../components/Text';
+import TextDesc from '../../components/Texts';
 
 const Students = () => {
   return (
