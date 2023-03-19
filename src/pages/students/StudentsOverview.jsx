@@ -7,48 +7,43 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import TablePagination from '@mui/material/TablePagination';
 import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
-import fetchData from '../../services/StudentOverview';
-const columns = [
-  { id: 'id', label: 'ID', align: 'left' },
-  { id: 'code', label: 'Code', align: 'right' },
-  { id: 'name', label: 'Name', align: 'right' },
-  { id: 'email', label: 'Email', align: 'right' },
-  { id: 'phone', label: 'Phone', align: 'right' },
-  { id: 'status', label: 'Status', align: 'right' },
-  { id: 'createdAt', label: 'CreatedAt', align: 'right' },
-  { id: 'updatedAt', label: 'UpdatedAt', align: 'right' }
+import { getStudents } from '../../services/student';
+import { TableSortLabel } from '@mui/material';
+
+const headers = [
+  { id: 'code', label: 'Code', align: 'left' },
+  { id: 'name', label: 'Name', align: 'left' },
+  { id: 'email', label: 'Email', align: 'left' },
+  { id: 'phone', label: 'Phone', align: 'left' },
+  { id: 'status', label: 'Status', align: 'left' },
+  { id: '', label: 'Action', align: 'left' }
 ];
 
 const StudentsOverview = () => {
   const [page, setPage] = useState(0);
+  const [sortOptions, setSortOptions] = useState({
+    order: 'id',
+    sort: 'asc'
+  });
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [data, setData] = useState([]);
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetchData(page).then((response) => {
-      const { data: fetchedData, info: paginationInfo } = response;
-      setData(fetchedData);
-      setInfo(paginationInfo);
+    getStudents(page, rowsPerPage, sortOptions).then((response) => {
+      setData(response.data);
+      setInfo(response.info);
     });
-  }, []);
-  const handleChangePage = (event, newPage) => {
-    console.log(newPage);
-    fetchData(newPage).then((response) => {
-      const { data: fetchedData, info: paginationInfo } = response;
-      setData(fetchedData);
-      setInfo(paginationInfo);
-    });
-    setPage(newPage);
-  };
+  }, [page, rowsPerPage, sortOptions]);
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
+  const handleSort = (id) => {
+    setSortOptions({
+      order: id,
+      sort: sortOptions.sort === 'desc' ? 'asc' : 'desc'
+    });
   };
 
   return (
@@ -61,14 +56,19 @@ const StudentsOverview = () => {
           <div className="OverideHeaderStudent">
             <h1 className="Title">Register Student</h1>
           </div>
-          <div className="TableCenter">
-            <TableContainer component={Paper}>
+          <div>
+            <TableContainer>
               <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow>
-                    {columns.map((column) => (
+                    {headers.map((column) => (
                       <TableCell key={column.id} align={column.align}>
-                        {column.label}
+                        <TableSortLabel
+                          active={sortOptions.order === column.id}
+                          direction={sortOptions.sort}
+                          onClick={() => handleSort(column.id)}>
+                          {column.label}
+                        </TableSortLabel>
                       </TableCell>
                     ))}
                   </TableRow>
@@ -76,14 +76,11 @@ const StudentsOverview = () => {
                 <TableBody>
                   {data.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell>{row.id}</TableCell>
                       <TableCell>{row.code}</TableCell>
                       <TableCell>{row.name}</TableCell>
                       <TableCell>{row.email}</TableCell>
                       <TableCell>{row.phone}</TableCell>
                       <TableCell>{row.status}</TableCell>
-                      <TableCell>{row.createdAt}</TableCell>
-                      <TableCell>{row.updatedAt}</TableCell>
                       <TableCell>
                         <div>
                           <BootstrapButton text="edit" />
@@ -97,11 +94,11 @@ const StudentsOverview = () => {
               <TablePagination
                 rowsPerPageOptions={[10, 20, 30]}
                 component="div"
-                count={info.count}
+                count={info.count || 0}
                 rowsPerPage={rowsPerPage}
                 page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
+                onPageChange={(_e, newPage) => setPage(newPage)}
+                onRowsPerPageChange={(e) => setRowsPerPage(parseInt(e.target.value))}
               />
             </TableContainer>
           </div>

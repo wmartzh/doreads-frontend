@@ -6,7 +6,7 @@ import { useState } from 'react';
 import BootstrapButton from '../../components/btnBlue.jsx';
 import AlertComp from '../../components/Alert.jsx';
 import { authenticate } from '../../services/auth';
-
+// import { AuthContext } from '../../context/AuthContext';
 const ErrorAlert = (props) => <AlertComp severity="error" message={props.message} color="F53636" />;
 const WarningAlert = (props) => (
   <AlertComp severity="warning" message={props.message} color="E9BD1F" />
@@ -17,7 +17,7 @@ const Login = () => {
   const [error, setError] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  // const auth = useContext(AuthContext);
   const loginClickHandler = async (e) => {
     e.preventDefault();
     setError('');
@@ -31,7 +31,7 @@ const Login = () => {
       setWarning('Please enter Password');
     } else {
       const { data, error } = await authenticate({ email, password }, setError);
-
+      // auth.verify();
       if (data) {
         window.location.href = '/home';
       }
