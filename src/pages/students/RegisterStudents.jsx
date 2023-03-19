@@ -3,37 +3,19 @@ import graduated from '../../assets/graduated.svg';
 import BootstrapButton from '../../components/btnBlue.jsx';
 import '../../styles/Students.css';
 import React, { useState } from 'react';
-import axios from 'axios';
-import * as yup from 'yup';
-
-const studentSchema = yup.object().shape({
-  code: yup
-    .string()
-    .matches(/^\d{4}-\d{4}$/, 'Invalid student code')
-    .required(),
-  name: yup.string().required('Please enter a name'),
-  email: yup.string().email('Invalid email address').required('Please enter an email'),
-  phone: yup
-    .string()
-    .matches(/^\+\d{1,3}\s\d{3,14}$/, 'Invalid phone number')
-    .required()
-});
+import postStudentData from './SolicitudPostStudent';
 const RegisterStudents = () => {
-  const [postStudent, setPostStudent] = useState({
+  const [postDtaStudent, setPostDataStudent] = useState({
     code: '',
     name: '',
     email: '',
     phone: ''
   });
-  const [errors, setErrors] = useState({
-    code: '',
-    name: '',
-    email: '',
-    phone: ''
-  });
+  const [errors, setErrors] = useState({});
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setPostStudent((prevFormData) => ({
+    setPostDataStudent((prevFormData) => ({
       ...prevFormData,
       [name]: value
     }));
@@ -42,21 +24,12 @@ const RegisterStudents = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const token = localStorage.getItem('token');
     try {
-      await studentSchema.validate(postStudent, { abortEarly: false });
-      setErrors({});
-      const response = await axios.post('http://localhost:8000/student/register', postStudent, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+      const response = await postStudentData(postDtaStudent);
       console.log('La respuesta de la solicitud POST es: ', response);
     } catch (error) {
-      console.log('Ocurrió un error durante la solicitud POST: ', error);
-      if (error instanceof yup.ValidationError) {
-        setErrors(error.inner.reduce((acc, val) => ({ ...acc, [val.path]: val.message }), {}));
-      }
+      console.log('Ocurrio un error al enviar los datos del formularios: ', error);
+      setErrors(error);
     }
   };
 
@@ -81,7 +54,7 @@ const RegisterStudents = () => {
                         <input
                           type="text"
                           name="code"
-                          value={postStudent.code}
+                          value={postDtaStudent.code}
                           onChange={handleInputChange}
                           id="Code"
                           placeholder="Enter Code"
@@ -95,7 +68,7 @@ const RegisterStudents = () => {
                         <input
                           type="text"
                           name="name"
-                          value={postStudent.name}
+                          value={postDtaStudent.name}
                           onChange={handleInputChange}
                           id="Name"
                           placeholder="Enter Name"
@@ -109,7 +82,7 @@ const RegisterStudents = () => {
                         <input
                           type="text"
                           name="email"
-                          value={postStudent.email}
+                          value={postDtaStudent.email}
                           onChange={handleInputChange}
                           id="Email"
                           placeholder="Enter Email"
@@ -124,7 +97,7 @@ const RegisterStudents = () => {
                           type="text"
                           name="phone"
                           onChange={handleInputChange}
-                          value={postStudent.phone}
+                          value={postDtaStudent.phone}
                           id="Phone"
                           placeholder="Enter Phone"
                         />
