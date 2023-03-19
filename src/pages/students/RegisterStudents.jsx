@@ -4,6 +4,7 @@ import BootstrapButton from '../../components/btnBlue.jsx';
 import '../../styles/Students.css';
 import React, { useState } from 'react';
 import postStudentData from './SolicitudPostStudent';
+import ButtonAppBar from '../../components/Header';
 const RegisterStudents = () => {
   const [postDtaStudent, setPostDataStudent] = useState({
     code: '',
@@ -41,7 +42,7 @@ const RegisterStudents = () => {
       <div className="ViewRegisterStudent">
         <div className="BodyStuden">
           <div className="HeaderStudent">
-            <h1 className="Title">Register Student</h1>
+            <ButtonAppBar />
           </div>
           <div className="CenterRegister">
             <div className="AlertStudent">

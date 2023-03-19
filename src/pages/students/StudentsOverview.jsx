@@ -12,6 +12,7 @@ import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
 import { getStudents } from '../../services/student';
 import { TableSortLabel } from '@mui/material';
+import ButtonAppBar from '../../components/Header';
 
 const headers = [
   { id: 'code', label: 'Code', align: 'left' },
@@ -54,7 +55,7 @@ const StudentsOverview = () => {
       <div className="ViewStudent">
         <div className="BodyOveridetudent">
           <div className="OverideHeaderStudent">
-            <h1 className="Title">Register Student</h1>
+            <ButtonAppBar />
           </div>
           <div>
             <TableContainer>
