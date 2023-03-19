@@ -1,4 +1,3 @@
-import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/home/Home';
 import Login from '../pages/auth/Login';
 import Books from '../pages/books/Books';
@@ -15,15 +14,19 @@ import Books1 from '../pages/Test/BooksTest';
 import HomeTest from '../pages/Test/HomeTest';
 import TestWorker from '../pages/Test/RegisterWorkerForm';
 
-const router = createBrowserRouter([
+export const unprotectedRoutes = [
+  {
+    path: '/login',
+    element: <Login />
+  }
+];
+
+export const protectedRoutes = [
   {
     path: '/',
     element: <Home />
   },
-  {
-    path: '/login',
-    element: <Login />
-  },
+
   {
     path: '/books',
     element: <Books />
@@ -76,5 +79,4 @@ const router = createBrowserRouter([
     path: '/workerTest',
     element: <TestWorker />
   }
-]);
-export default router;
+];
