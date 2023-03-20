@@ -11,7 +11,7 @@ const home = () => {
       <div className="Cont2">
         <div className="SearchCont">
           <div className="Welcome">
-            <h1 className="Title">Hi, Welcome back</h1>
+            <h1 className="Title1">Hi, Welcome back</h1>
             <h4 className="Desc">
               The book catalog is waiting for you, by clicking the button go directly to it and
               Manage your books

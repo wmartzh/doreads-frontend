@@ -16,7 +16,7 @@
     width: 98%;
     height: 40vh;
     border-color: #D6D6D6;
-    padding: 15px;
+    padding: 16px;
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -34,12 +34,12 @@
     border-style: solid;
     border: #D6D6D6 1px solid;
     border-width: 1px;
-    padding: 20px;
+    padding: 14px;
 }
 
 .Cont3{
     margin-top: 18px;
-    padding: 10px;
+    padding: 15px;
     border-style: solid;
     border: #D6D6D6 1px solid;
     border-width: 1px;

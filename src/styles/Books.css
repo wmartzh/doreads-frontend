@@ -30,14 +30,13 @@
 
 .DescriptionCont{
    height: 190px;
-   width: 100%;
+   max-width: 100%;
 }
 
 
 .DescBooks{ 
     max-width: 50%;
     max-height: 79vh;
-    margin-left: 20px;
     border-radius: 10px;
   }
 
