@@ -2,16 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 .ContMain{
+    padding: 0;
     display: row;
-    width: 100%;
-    height: 99.7vh;
     font-family: 'Open Sans', sans-serif;
 }
 
 .ContHeader{
     display: flex;
-    width: 99.9%;
-    height: 10%;
+    height: 10vh;
 }
 
 .ContForm{
@@ -119,7 +117,6 @@
 
 .errorContainer{
     display: flex;
-    border: #000000 1px solid;
     flex-direction: column;
     justify-content: center;
     align-items: center;

@@ -6,6 +6,7 @@ export async function authenticate(userdata) {
     localStorage.setItem('refreshToken', response.data.refreshToken);
     return response;
   } catch (error) {
+    console.log(error);
     return { error: error.response };
   }
 }

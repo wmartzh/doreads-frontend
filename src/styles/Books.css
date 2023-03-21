@@ -8,11 +8,6 @@
     min-height: 100vh;
  }
  
-.sideBar{
-     width: 300px;
-     min-height: 100vh;  
- }
-
 .IconBook{
      width: 250px;
      height: 250px;
@@ -21,23 +16,28 @@
      margin-right: 10px;
  }
 
-.Books{ 
+ .ContentBooks{
+    display: flex;
+    padding: 125px;
+ }
+
+.Books{
+  margin: auto;   
   min-width: 30%;
-  max-height: 79vh;
-  margin-top: 100px;
-  margin-left: 100px;
-  margin-right: 20px;
-  margin-bottom: 50px;	
+  height: 100%;
+  margin-right: 20px;	
+}
+
+.DescriptionCont{
+   height: 190px;
+   max-width: 100%;
 }
 
 
 .DescBooks{ 
-    min-width: 55%;
+    max-width: 50%;
     max-height: 79vh;
-    margin-top: 100px;
-    margin-right: 20px;
-    margin-bottom: 107px;
-    border: #000000 1px solid;
+    border-radius: 10px;
   }
 
 .Title{
@@ -49,9 +49,8 @@
 
 .Books1{
     min-width: 100%;
-    border: 1px solid #000000;
     padding: 10px;
-    max-height: 78vh;
+    height: 100%;
     overflow: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none;  
@@ -59,13 +58,4 @@
 
 .Books1::-webkit-scrollbar {
     display: none;
-}
-
-.Cont{
-    display: flex;
-    max-height: 95vh;
-    min-width: 170vh;
-    border: #000000 1px solid;
-    margin : 20px;
-    margin-left: 10px;
 }

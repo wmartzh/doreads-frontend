@@ -1,7 +1,7 @@
 function Form(props) {
   const form = {
     fontFamily: 'Open Sans , sans-serif',
-    '-webkit-border-radius': '10px 10px 10px 10px',
+    WebkitBorderRadius: '10px 10px 10px 10px',
     borderRadius: '10px 10px 10px 10px',
     backgroundColor: '#FEFEFF',
     padding: '30px',
