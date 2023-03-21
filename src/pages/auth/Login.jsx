@@ -1,5 +1,5 @@
 import '../../styles/login.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../components/Button.jsx';
 import AlertComp from '../../components/Alert.jsx';
 import { authenticate } from '../../services/auth';
@@ -19,6 +19,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // const auth = useContext(AuthContext);
+
+  useEffect(() => {}, [password, email]);
   const loginClickHandler = async (e) => {
     e.preventDefault();
     setError('');
@@ -35,7 +37,7 @@ const Login = () => {
       const { data, error } = await authenticate({ email, password }, setError);
       // auth.verify();
       if (data) {
-        window.location.href = '/home';
+        window.location.href = '/';
       }
       if (error.status == 404) {
         setError('Credentials not found');
@@ -45,6 +47,7 @@ const Login = () => {
       }
     }
   };
+
   return (
     <div className="body">
       <div className="contentlogin">
@@ -54,23 +57,23 @@ const Login = () => {
               <img src={logo} className="icondoread"></img>
               <InputLabel InputLabel="Email"></InputLabel>
               <Input
-                colorHover="#394c73"
                 width="95%"
                 height="44px"
                 variant="outlined"
                 type="text"
                 id="email"
                 placeholder="Enter email"
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}></Input>
               <InputLabel InputLabel="Password"></InputLabel>
               <Input
-                colorHover="#394c73"
                 width="95%"
-                type="text"
+                type="password"
                 id="password"
                 height="44px"
                 placeholder="Enter password"
                 variant="outlined"
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}></Input>
               <Button
                 type="submit"
