@@ -117,7 +117,6 @@
 
 .errorContainer{
     display: flex;
-    border: #000000 1px solid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
