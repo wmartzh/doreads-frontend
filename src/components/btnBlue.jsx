@@ -9,7 +9,7 @@ function BootstrapButton(props) {
     border: 'none',
     width: '200px',
     height: '44px',
-    'border-radius': '10px',
+    borderRadius: '10px',
     fontSize: 16,
     padding: '6px 12px',
     lineHeight: 1.5,

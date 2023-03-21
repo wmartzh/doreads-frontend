@@ -22,7 +22,13 @@ instance.interceptors.response.use(
   async function (error) {
     const originalRequest = error.config;
     const { status } = error.response;
+
     const refreshToken = localStorage.getItem('refreshToken');
+    if (status === 401) {
+      originalRequest._retry = false;
+      localStorage.removeItem('accessToken');
+      window.location.reload();
+    }
 
     if (status === 403 && !originalRequest._retry) {
       originalRequest._retry = true;
@@ -34,6 +40,7 @@ instance.interceptors.response.use(
       axios.defaults.headers['Authorization'] = 'Bearer ' + response.data.accessToken;
       return axios(originalRequest);
     }
+
     return Promise.reject(error);
   }
 );

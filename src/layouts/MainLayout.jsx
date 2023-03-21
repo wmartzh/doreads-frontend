@@ -9,7 +9,7 @@ export default function MainLayout() {
         <div className="sideBar">
           <Sidebar />
         </div>
-        <div className="Cont">
+        <div className="cont">
           <Outlet />
         </div>
       </div>
