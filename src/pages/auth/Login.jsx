@@ -52,7 +52,7 @@ const Login = () => {
     <div className="body">
       <div className="contentlogin">
         <div className="contauto">
-          <Form width="80%" height="85%">
+          <Form width="80%" height="90%">
             <div className="textFields">
               <img src={logo} className="icondoread"></img>
               <InputLabel InputLabel="Email"></InputLabel>
@@ -75,18 +75,20 @@ const Login = () => {
                 variant="outlined"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}></Input>
-              <Button
-                type="submit"
-                margin="auto"
-                id="loginButton"
-                text="Login"
-                color="#394C73"
-                width="320px"
-                height="44px"
-                colorHover="#2E3E5C"
-                TextInButton="Login"
-                onClick={loginClickHandler}
-              />
+              <div className="ButtonLog">
+                <Button
+                  type="submit"
+                  margin="auto"
+                  id="loginButton"
+                  text="Login"
+                  color="#394C73"
+                  width="320px"
+                  height="44px"
+                  colorHover="#2E3E5C"
+                  TextInButton="Login"
+                  onClick={loginClickHandler}
+                />
+              </div>
             </div>
           </Form>
           <div className="errorContainer">
