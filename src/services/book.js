@@ -1,5 +1,5 @@
-import axios from "./axios";
-const booksBase = "/book";
+import axios from './axios';
+const booksBase = '/book';
 
 export async function getBooks(page, perPage, sortOptions) {
   try {
