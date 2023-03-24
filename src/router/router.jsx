@@ -13,7 +13,7 @@ import RegisterStudents from '../pages/students/RegisterStudents';
 import Books1 from '../pages/Test/BooksTest';
 import HomeTest from '../pages/Test/HomeTest';
 import TestWorker from '../pages/Test/RegisterWorkerForm';
-
+console.log('router');
 export const unprotectedRoutes = [
   {
     path: '/login',
