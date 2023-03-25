@@ -13,6 +13,7 @@ import RegisterStudents from '../pages/students/RegisterStudents';
 import Books1 from '../pages/Test/BooksTest';
 import HomeTest from '../pages/Test/HomeTest';
 import TestWorker from '../pages/Test/RegisterWorkerForm';
+import Search from '../pages/home/SearchBooks';
 
 export const unprotectedRoutes = [
   {
@@ -66,6 +67,10 @@ export const protectedRoutes = [
   {
     path: '/registerworker',
     element: <RegisterWorkers />
+  },
+  {
+    path: '/searchbook',
+    element: <Search />
   },
   {
     path: '/BookTest',

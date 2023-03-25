@@ -1,0 +1,40 @@
+.ContenedorSearch{
+    display: flex;
+    border: 1px solid #000000;
+    margin: 15px;
+    width: 98%;
+    max-height: 100%;
+}
+
+.Catalogo{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.TitleBook{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.DescBooks{
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+}
+
+
+.DescBooks2{
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    float: right;
+}

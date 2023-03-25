@@ -18,7 +18,7 @@ const home = () => {
             </h4>
             <div className="BtnPos">
               <Button
-                href="/search"
+                href="/searchbook"
                 TextInButton="Search"
                 color="#394C73"
                 width="200px"
