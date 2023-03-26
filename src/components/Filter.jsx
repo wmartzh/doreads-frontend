@@ -1,34 +1,36 @@
 import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useState } from 'react';
 
-function Filter(porps) {
-  //   const style = {
-  //     position: 'absolute',
-  //     top: '50%',
-  //     left: '50%',
-  //     transform: 'translate(-50%, -50%)',
-  //     height: 500,
-  //     width: 500,
-  //     bgcolor: 'background.paper',
-  //     boxShadow: 24,
-  //     borderRadius: 2,
-  //     p: 4,
-  //     overflow: 'scroll',
-  //     '-ms-overflow-style': 'none',
-  //     'scrollbar-width': 'none',
-  //     '&::-webkit-scrollbar': {
-  //       display: 'none'
-  //     }
-  //   };
-
+export default function BasicSelect(props) {
+  const [value, setValue] = useState('');
+  const styles = {
+    width: props.width,
+    height: props.height,
+    margin: props.margin,
+    fontSize: props.fontSize
+  };
+  const handleChange = async (event) => {
+    await setValue(event.target.value);
+  };
   return (
-    <div className="ContFilter">
-      <Box>
-        <select value={porps.category} onChange={porps.onChange}>
-          <option value="">Filtros</option>
-        </select>
-      </Box>
-    </div>
+    <Box sx={{ width: props.width }}>
+      <FormControl fullWidth variant="filled">
+        <InputLabel>{props.label}</InputLabel>
+        <Select style={styles} id={props.selectId} value={value} onChange={handleChange}>
+          {props.options &&
+            props.options.map((el, i) => {
+              return (
+                <MenuItem value={el} key={i}>
+                  {el}
+                </MenuItem>
+              );
+            })}
+        </Select>
+      </FormControl>
+    </Box>
   );
 }
-
-export default Filter;

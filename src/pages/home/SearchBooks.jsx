@@ -18,6 +18,8 @@ const Search = () => {
   // const [author, setAuthor] = useState('');
   // const [year, setYear] = useState('');
 
+  const options = ['asc', 'desc'];
+
   useEffect(() => {
     const getData = async () => {
       const response = await getBooks(page, perPage, search);
@@ -41,7 +43,7 @@ const Search = () => {
         </div>
         <div className="ContFiltros">
           <div className="ButtonFilter">
-            <Filter></Filter>
+            <Filter options={options} height="25px" label="Filter"></Filter>
           </div>
           <div className="SearchInput">
             <SearchInput
