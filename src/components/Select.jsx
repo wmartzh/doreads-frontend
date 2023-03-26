@@ -14,7 +14,7 @@ export default function BasicSelect(props) {
     <Box sx={{ width: props.width }}>
       <FormControl fullWidth variant="filled">
         <InputLabel>{props.label}</InputLabel>
-        <Select id={props.id} value={value} onChange={handleChange}>
+        <Select id={props.selectId} value={value} onChange={handleChange}>
           {props.options &&
             props.options.map((el, i) => {
               return (

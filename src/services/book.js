@@ -21,3 +21,26 @@ export async function createBook(book) {
     return [];
   }
 }
+
+export function collectBookData() {
+  console.log('collecting data');
+  console.log('ISBN: ', document.getElementById('BookISBN').value);
+  console.log('Title: ', document.getElementById('BookTitle').value);
+  console.log('Author: ', document.getElementById('BookAuthor').value);
+  console.log('Picture: ', document.getElementById('BookPicture').value);
+  console.log('Editorial: ', document.getElementById('BookEditorial').value);
+  console.log('Year: ', document.getElementById('BookYear').getAttribute('value'));
+  console.log('Category: ', document.getElementById('BookCategory').innerHTML.toString());
+  console.log('Language: ', document.getElementById('BookLanguage').innerHTML.toString());
+  // const book = {
+  //   title: document.getElementById('BookTitle').value,
+  //   author: document.getElementById('BookAuthor').value,
+  //   isbn: document.getElementById('BookISBN').value,
+  //   category: document.getElementById('BookCategory').value,
+  //   year: document.getElementById('BookYear').value,
+  //   picture: document.getElementById('BookPicture').value,
+  //   editorial: document.getElementById('BookEditorial').value,
+  //   language: document.getElementById('BookLanguage').value
+  // };
+  // console.log(book);
+}

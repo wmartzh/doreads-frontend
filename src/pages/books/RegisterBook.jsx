@@ -6,10 +6,7 @@ import Input from '../../components/Input';
 import DatePickerComp from '../../components/DatePicker';
 import Button from '../../components/Button';
 import BasicSelect from '../../components/Select';
-// import { DatePicker } from '@mui/x-date-pickers';
-// import DatePickerComp from '../../components/DatePicker';
-// import Button from '../../components/Button';
-// import createBook from '../../services/book';
+import { collectBookData } from '../../services/book';
 const RegisterBook = () => {
   const Hola = ['hola', 'hola2', 'hola3'];
   return (
@@ -73,11 +70,11 @@ const RegisterBook = () => {
           </div>
           <div className="textFields2">
             <InputLabel InputLabel="Year"></InputLabel>
-            <DatePickerComp label="Year" />
+            <DatePickerComp label="Year" dpickerId="BookYear" />
             <InputLabel InputLabel="Category"></InputLabel>
-            <BasicSelect label="Category" options={Hola} width="50%" />
+            <BasicSelect label="Category" options={Hola} width="50%" selectId="BookCategory" />
             <InputLabel InputLabel="Language"></InputLabel>
-            <BasicSelect label="Language" options={Hola} width="50%" />
+            <BasicSelect label="Language" options={Hola} width="50%" selectId="BookLanguage" />
             <Button
               TextInButton="Register Book"
               color="#394c73"
@@ -85,7 +82,7 @@ const RegisterBook = () => {
               width="70%"
               height="44px"
               margin="15px 0px 0px 0px"
-              type="submit"
+              onClick={() => collectBookData()}
             />
           </div>
         </Form>
