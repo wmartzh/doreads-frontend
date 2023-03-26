@@ -31,7 +31,7 @@ export default function ActionAreaCard(props) {
       </CardActionArea>
       <CardContent sx={{ padding: 0 }}>
         <h2 className="DescBooks">ISBN:{props.ISBN}</h2>
-        <h2 className="DescBooks2">Quantity:{props.Quantity}</h2>
+        <h2 className="DescBooks2">Quantity:1</h2>
       </CardContent>
     </Card>
   );

@@ -1,19 +1,20 @@
 .ContFiltros{
+margin-top: 20px;
     width: 100%vh;
     height: 40px;
     display: flex;
-    position: static;
-    border: 1px solid #000000;
+    justify-content: space-between;
 }
 
 .ButtonFilter{
+    width: 100px;
+    height: 30px;
     margin-left: 50px;
     float: left;
 }
 
-.InputSearch{
-    border: #000000 1px solid;
-    margin-right: 50px;
+.SearchInput{
+    margin-right: 53px;
     float: right;
 }
 
@@ -21,15 +22,18 @@
     display: grid;
     height: 750px;
     width: 100%vh;
-    border: #000000 1px solid;
     grid-template-columns: repeat(5, 1fr);
     position: static;
 }
 
 .Pagination{
-    border: #000000 1px solid;
     height: 40px;
     display: grid;
+}
+
+.Cargando{
+   margin-left: 50px; 
+   display: flex;
 }
 
 .TitleBook{
