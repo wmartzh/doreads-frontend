@@ -24,6 +24,7 @@ const home = () => {
                 width="200px"
                 height="44px"
                 colorHover="#2E3E5C"
+                fontSize="16px"
                 margin="0"></Button>
             </div>
           </div>
@@ -45,6 +46,7 @@ const home = () => {
               margin="auto"
               href="/registerworker"
               TextInButton="Register"
+              fontSize="16px"
               color="#E9BD1F"
               width="200px"
               height="44px"

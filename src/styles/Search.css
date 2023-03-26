@@ -1,16 +1,35 @@
-.ContenedorSearch{
+.ContFiltros{
+    width: 100%vh;
+    height: 40px;
     display: flex;
+    position: static;
     border: 1px solid #000000;
-    margin: 15px;
-    width: 98%;
-    max-height: 100%;
+}
+
+.ButtonFilter{
+    margin-left: 50px;
+    float: left;
+}
+
+.InputSearch{
+    border: #000000 1px solid;
+    margin-right: 50px;
+    float: right;
 }
 
 .Catalogo{
     display: grid;
+    height: 750px;
+    width: 100%vh;
+    border: #000000 1px solid;
     grid-template-columns: repeat(5, 1fr);
-    max-width: 100%;
-    max-height: 100%;
+    position: static;
+}
+
+.Pagination{
+    border: #000000 1px solid;
+    height: 40px;
+    display: grid;
 }
 
 .TitleBook{
