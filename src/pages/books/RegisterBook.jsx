@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Input from '../../components/Input';
 import DatePickerComp from '../../components/DatePicker';
 import Button from '../../components/Button';
+import BasicSelect from '../../components/Select';
 // import { DatePicker } from '@mui/x-date-pickers';
 // import DatePickerComp from '../../components/DatePicker';
 // import Button from '../../components/Button';
@@ -63,14 +64,16 @@ const RegisterBook = () => {
             <InputLabel InputLabel="Year"></InputLabel>
             <DatePickerComp label="Year" />
             <InputLabel InputLabel="Category"></InputLabel>
+            <BasicSelect label="Category" />
             <InputLabel InputLabel="Language"></InputLabel>
+            <BasicSelect label="Language" />
             <Button
-              TextInButton="Register"
+              TextInButton="Register Book"
               color="#394c73"
               colorHover="#394c73"
-              width="80%"
+              width="70%"
               height="44px"
-              margin="0px 0px 0px 0px"
+              margin="15px 0px 0px 0px"
               type="submit"
             />
           </div>
