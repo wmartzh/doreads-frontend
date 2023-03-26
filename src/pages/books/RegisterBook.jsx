@@ -11,6 +11,7 @@ import BasicSelect from '../../components/Select';
 // import Button from '../../components/Button';
 // import createBook from '../../services/book';
 const RegisterBook = () => {
+  const Hola = ['hola', 'hola2', 'hola3'];
   return (
     <div className="ContMain">
       <div className="ContHeader">
@@ -19,6 +20,16 @@ const RegisterBook = () => {
       <div className="ContForm">
         <Form width="60%">
           <div className="textFields1">
+            <InputLabel InputLabel="ISBN"></InputLabel>
+            <Input
+              height="44px"
+              width="100%"
+              colorHover="#394c73"
+              id="BookISBN"
+              placeholder="Enter ISBN"
+              type="text"
+              variant="outlined"
+            />
             <InputLabel InputLabel="Title"></InputLabel>
             <Input
               height="44px"
@@ -64,9 +75,9 @@ const RegisterBook = () => {
             <InputLabel InputLabel="Year"></InputLabel>
             <DatePickerComp label="Year" />
             <InputLabel InputLabel="Category"></InputLabel>
-            <BasicSelect label="Category" />
+            <BasicSelect label="Category" options={Hola} width="50%" />
             <InputLabel InputLabel="Language"></InputLabel>
-            <BasicSelect label="Language" />
+            <BasicSelect label="Language" options={Hola} width="50%" />
             <Button
               TextInButton="Register Book"
               color="#394c73"
