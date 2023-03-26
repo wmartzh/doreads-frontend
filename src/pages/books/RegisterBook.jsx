@@ -8,7 +8,8 @@ import Button from '../../components/Button';
 import BasicSelect from '../../components/Select';
 import { collectBookData } from '../../services/book';
 const RegisterBook = () => {
-  const Hola = ['hola', 'hola2', 'hola3'];
+  const Categoria = ['Ficcion', 'Ciencia', 'Arte', 'Tecnologia', 'Ingenieria y Matematicas'];
+  const Idiomas = ['ES', 'ENG'];
   return (
     <div className="ContMain">
       <div className="ContHeader">
@@ -72,9 +73,9 @@ const RegisterBook = () => {
             <InputLabel InputLabel="Year"></InputLabel>
             <DatePickerComp label="Year" dpickerId="BookYear" />
             <InputLabel InputLabel="Category"></InputLabel>
-            <BasicSelect label="Category" options={Hola} width="50%" selectId="BookCategory" />
+            <BasicSelect label="Category" options={Categoria} width="50%" selectId="BookCategory" />
             <InputLabel InputLabel="Language"></InputLabel>
-            <BasicSelect label="Language" options={Hola} width="50%" selectId="BookLanguage" />
+            <BasicSelect label="Language" options={Idiomas} width="50%" selectId="BookLanguage" />
             <Button
               TextInButton="Register Book"
               color="#394c73"

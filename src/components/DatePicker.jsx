@@ -8,7 +8,9 @@ const DatePickerComp = (props) => {
   const [value, setValue] = useState('');
 
   const changeHandler = (newValue) => {
-    setValue(newValue.toString());
+    let date = new Date(newValue);
+    let finalDate = date.getFullYear();
+    setValue(finalDate);
   };
 
   return (
