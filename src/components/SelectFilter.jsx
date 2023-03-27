@@ -9,7 +9,7 @@ import SortIcon from '@mui/icons-material/Sort';
 export default function BasicSelect(props) {
   const [value, setValue] = useState('');
 
-  const Select2 = styled(Select)(({ theme }) => ({
+  const Select2 = styled(Select)({
     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
       borderWidth: '1px',
       borderColor: '#D6D6D6'
@@ -18,22 +18,27 @@ export default function BasicSelect(props) {
       borderColor: '#D6D6D6',
       borderWidth: '1px'
     },
-    '& .MuiSelect-select': {
-      fontSize: '12px',
-      borderWidth: '0px',
-      color: '#394C73',
-      height: '26px',
-      borderRadius: '5px',
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderWidth: '1px',
+      borderColor: '#D6D6D6',
+      width: '90px',
+      height: '55px',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       fontFamily: 'Open Sans, sans-serif',
-      padding: theme.spacing(1, 1, 1, 0),
-      paddingLeft: `calc(1em + ${theme.spacing(0.2)})`,
-      width: '17vh'
+      fontSize: '10px'
+    },
+    '& .MuiOutlinedInput-input': {
+      padding: '10',
+      width: '60px',
+      fontSize: '14px'
+    },
+    '& .MuiSelect-root': {
+      padding: '10px 26px 10px 12px'
     },
     '& .MuiSelect-icon': {
       color: '#394C73'
     }
-  }));
+  });
 
   const handleChange = (event) => {
     const selectedValue = event.target.value;
@@ -45,7 +50,8 @@ export default function BasicSelect(props) {
   return (
     <FormControl>
       <InputLabel>
-        <SortIcon sx={{ fontSize: '20px', color: '#394C73' }} />
+        <SortIcon sx={{ fontSize: '13px', color: '#394C73' }} />
+        <span style={{ fontSize: '13px' }}>Sort by</span>
       </InputLabel>
       <Select2 label="Filter" id={props.selectId} value={value} onChange={handleChange}>
         {props.options &&
