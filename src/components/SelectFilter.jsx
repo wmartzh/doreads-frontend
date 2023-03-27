@@ -50,7 +50,7 @@ export default function BasicSelect(props) {
   return (
     <FormControl>
       <InputLabel>
-        <SortIcon sx={{ fontSize: '13px', color: '#394C73' }} />
+        <SortIcon sx={{ fontSize: '20px', color: '#394C73' }} />
         <span style={{ fontSize: '13px' }}>Sort by</span>
       </InputLabel>
       <Select2 label="Filter" id={props.selectId} value={value} onChange={handleChange}>
