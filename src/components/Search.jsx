@@ -31,7 +31,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     fontFamily: 'Open Sans, sans-serif',
     paddingLeft: `calc(1em + ${theme.spacing(3)})`,
-    width: '17vh',
+    width: '40vh',
     height: '40px'
   }
 }));
