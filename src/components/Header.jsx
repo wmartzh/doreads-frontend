@@ -27,20 +27,19 @@ export default function ButtonAppBar(props) {
   const font = {
     fontFamily: ['Open Sans', 'sans-serif'].join(','),
     fontSize: '20px',
-    color: 'black'
+    color: 'black',
+    cursor: 'pointer'
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={Header} position="static">
         <Toolbar style={Header}>
-          <Link
-            onClick={Back}
-            style={font}
-            component="div"
-            sx={{ flexGrow: 1, cursor: 'pointer', color: 'white', 'text-decoration': 'none' }}>
-            Back
-          </Link>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link sx={{ textDecoration: 'none' }} onClick={Back} style={font}>
+              Back
+            </Link>
+          </Box>
           <Typography variant="h4" style={font} component="div" sx={{ flexGrow: 1 }}>
             {props.TitlePage}
           </Typography>

@@ -21,7 +21,7 @@ export default function ActionAreaCard(props) {
           <h1 className="TitleBook">{props.title}</h1>
         </div>
         <CardMedia
-          component="img"
+          component={'img'}
           height="330"
           width="220px"
           border="none"
