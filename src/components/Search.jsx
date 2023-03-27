@@ -24,7 +24,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
-    fontSize: '14px',
+    fontSize: '13px',
     color: '#394C73',
     borderRadius: '5px',
     border: '1px solid #D6D6D6',
@@ -33,8 +33,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     fontFamily: 'Open Sans, sans-serif',
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    width: '170px',
-    height: '20px'
+    width: '16vh',
+    height: '24px'
   }
 }));
 

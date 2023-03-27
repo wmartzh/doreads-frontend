@@ -1,8 +1,13 @@
+.ContMainBooks{
+    height: 100%;
+}
+
 .ContFiltros{
     margin-top: 20px;
     margin-left: 100px;
     margin-right: 110px;
     height: 10%vh;
+    width: 87%;
     display: flex;
     justify-content: space-between;
 }
@@ -22,13 +27,19 @@
     display: grid;
     padding: 5px;
     max-width: 100%vh;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 50px;
     margin-right: 50px;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
     grid-template-columns: repeat(5, 1fr);
 }
-
+::-webkit-scrollbar {
+    display: none;
+}
 .Pagination{
+    margin-top: 20px;
     display: flex;
     margin-left: 50px;
     margin-right: 50px;
@@ -47,7 +58,7 @@
 }
 
 .DescBooks{
-    font-size: 1.21vh;
+    font-size: 1.18vh;
     width: 100%;
     font-weight: lighter;
     margin: 0px;
@@ -58,7 +69,7 @@
 
 
 .DescBooks2{
-    font-size: 1.3vh;
+    font-size: 1.18vh;
     font-weight: lighter;
     margin: 0px;
     padding: 0px;

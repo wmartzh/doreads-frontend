@@ -7,10 +7,10 @@ import styled from '@emotion/styled';
 export default function ActionAreaCard(props) {
   const StyledCardActionArea = styled(CardActionArea)({
     transition: 'all 0.2s ease-in-out',
-    transform: 'perspective(1000px)',
+    transform: 'scale(1)',
     '&:hover': {
-      transform: 'perspective(1000px) rotateX(5deg) rotateY(-5deg) rotateZ(0deg)',
-      boxShadow: '0 8px 20px rgba(0, 0, 0, 0.6)'
+      transform: 'scale(1.15)',
+      filter: 'brightness(0.6)'
     }
   });
 
@@ -33,7 +33,17 @@ export default function ActionAreaCard(props) {
         <div>
           <h1 className="TitleBook">{props.title}</h1>
         </div>
-        <CardMedia component={'img'} border="none" image={props.img} alt="BookIMG" />
+        <CardMedia
+          sx={{
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
+          }}
+          component={'img'}
+          border="none"
+          image={props.img}
+          alt="BookIMG"
+        />
         <CardContent sx={{ padding: 0 }}>
           <h2 className="DescBooks">ISBN:{props.ISBN}</h2>
           <h2 className="DescBooks2">Quantity:1</h2>

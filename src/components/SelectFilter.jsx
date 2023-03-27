@@ -10,7 +10,7 @@ export default function BasicSelect(props) {
 
   const Select2 = styled(Select)(({ theme }) => ({
     '& .MuiSelect-select': {
-      fontSize: '14px',
+      fontSize: '13px',
       color: '#394C73',
       height: '24px',
       borderRadius: '5px',
@@ -18,7 +18,7 @@ export default function BasicSelect(props) {
       fontFamily: 'Open Sans, sans-serif',
       padding: theme.spacing(1, 1, 1, 0),
       paddingLeft: `calc(1em + ${theme.spacing(0.2)})`,
-      width: '190px'
+      width: '17vh'
     }
   }));
 

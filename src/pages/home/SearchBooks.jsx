@@ -43,7 +43,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="ContMain">
+      <div className="ContMainBooks">
         <div className="ContHeaderSearch">
           <Header TitlePage="Search Books"></Header>
         </div>
