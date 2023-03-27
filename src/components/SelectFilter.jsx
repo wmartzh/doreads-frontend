@@ -9,7 +9,7 @@ export default function BasicSelect(props) {
   const [value, setValue] = useState('');
 
   const Select2 = styled(Select)(({ theme }) => ({
-    '& .MuiInputBase-input': {
+    '& .MuiSelect-select': {
       fontSize: '14px',
       color: '#394C73',
       height: '24px',
@@ -18,12 +18,7 @@ export default function BasicSelect(props) {
       fontFamily: 'Open Sans, sans-serif',
       padding: theme.spacing(1, 1, 1, 0),
       paddingLeft: `calc(1em + ${theme.spacing(0.2)})`,
-      width: '170px',
-      border: 'none',
-      '&:hover fieldset': {
-        border: 'none',
-        borderBottom: '2px solid '
-      }
+      width: '170px'
     }
   }));
 
@@ -36,7 +31,7 @@ export default function BasicSelect(props) {
 
   return (
     <FormControl>
-      <InputLabel sx={{ fontSize: '13px' }}>Filter</InputLabel>
+      <InputLabel sx={{ fontSize: '14px' }}>Filter</InputLabel>
       <Select2 label="Filter" id={props.selectId} value={value} onChange={handleChange}>
         {props.options &&
           props.options.map((el, i) => {
