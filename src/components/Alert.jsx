@@ -12,7 +12,8 @@ const AlertComp = (props) => {
         width: '90%'
       }}
       variant="filled"
-      severity={props.severity}>
+      severity={props.severity}
+      onClose={props.onClose}>
       {props.message}
     </Alert>
   );

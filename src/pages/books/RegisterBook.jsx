@@ -7,9 +7,12 @@ import DatePickerComp from '../../components/DatePicker';
 import Button from '../../components/Button';
 import BasicSelect from '../../components/Select';
 import { collectBookData } from '../../services/book';
+import AlertComp from '../../components/Alert';
+import { useState } from 'react';
 const RegisterBook = () => {
   const Categoria = ['Ficcion', 'Ciencia', 'Arte', 'Tecnologia', 'Ingenieria y Matematicas'];
   const Idiomas = ['ES', 'ENG'];
+  const [alert, setAlert] = useState({ isOpen: false, message: '', severity: 'success' });
   return (
     <div className="ContMain">
       <div className="ContHeader">
@@ -83,10 +86,19 @@ const RegisterBook = () => {
               width="70%"
               height="44px"
               margin="15px 0px 0px 0px"
-              onClick={() => collectBookData()}
+              onClick={() => collectBookData(setAlert)}
             />
           </div>
         </Form>
+        <div className="errorContainer">
+          {alert.isOpen && (
+            <AlertComp
+              message={alert.message}
+              severity={alert.severity}
+              onClose={() => setAlert({ isOpen: false, message: '', severity: '' })}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
