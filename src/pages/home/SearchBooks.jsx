@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import CircularProgress from '../../components/CircularProgress';
 import Pagination from '@mui/material/Pagination';
 import SearchInput from '../../components/Search';
-import Filter from '../../components/Filter';
+import Filter from '../../components/SelectFilter';
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -14,25 +14,31 @@ const Search = () => {
   const [page, setPage] = useState(0);
   const [perPage, setPerPage] = useState(10);
   const [search, setSearch] = useState('');
-  // const [category, setCategory] = useState('');
-  // const [author, setAuthor] = useState('');
-  // const [year, setYear] = useState('');
+  const [sort, setSort] = useState({
+    sort: 'asc'
+  });
 
   const options = ['asc', 'desc'];
 
   useEffect(() => {
     const getData = async () => {
-      const response = await getBooks(page, perPage, search);
+      const response = await getBooks(page, perPage, search, sort);
       setData(response.data);
       setInfo(response.info);
       console.log(response);
     };
     getData();
-  }, [page, perPage, search]);
+  }, [page, perPage, search, sort]);
 
   const handlePageChange = (_event, value) => {
     setPage(value);
     setPerPage(perPage);
+  };
+
+  const handleSort = (selectedValue) => {
+    setSort({
+      sort: selectedValue
+    });
   };
 
   return (
@@ -43,7 +49,11 @@ const Search = () => {
         </div>
         <div className="ContFiltros">
           <div className="ButtonFilter">
-            <Filter options={options} height="25px" label="Filter"></Filter>
+            <Filter
+              selectId="SelectSearch"
+              options={options}
+              onChange={handleSort}
+              height="25px"></Filter>
           </div>
           <div className="SearchInput">
             <SearchInput

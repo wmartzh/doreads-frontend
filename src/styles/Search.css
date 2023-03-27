@@ -7,9 +7,7 @@ margin-top: 20px;
 }
 
 .ButtonFilter{
-    width: 100px;
-    height: 30px;
-    margin-left: 50px;
+    margin-left: 54px;
     float: left;
 }
 
@@ -22,6 +20,7 @@ margin-top: 20px;
     display: grid;
     height: 750px;
     width: 100%vh;
+    margin-top: 10px;
     grid-template-columns: repeat(5, 1fr);
     position: static;
 }

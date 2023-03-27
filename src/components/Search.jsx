@@ -13,7 +13,7 @@ const Search = styled('div')(({ theme }) => ({
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(1, 2),
   position: 'absolute',
   pointerEvents: 'none',
   display: 'flex',
@@ -27,13 +27,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     fontSize: '14px',
     color: '#394C73',
     borderRadius: '5px',
+    border: '1px solid #D6D6D6',
     borderButton: '1px solid #394C73',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     fontFamily: 'Open Sans, sans-serif',
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     width: '170px',
-    height: '10px'
+    height: '20px'
   }
 }));
 
