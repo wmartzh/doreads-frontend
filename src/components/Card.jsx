@@ -18,11 +18,14 @@ export default function ActionAreaCard(props) {
     background: 'none',
     boxShadow: 'none',
     padding: '0',
-    width: '220px',
-    maxWidth: 220,
-    maxHeight: 400,
-    marginLeft: '55px',
-    marginRigth: '50px'
+    width: '100%',
+    height: '100%',
+    marginLeft: '50px',
+    maxWidth: '65%',
+    minwidth: '20%',
+    maxHeight: '100%',
+    minHeight: '20%',
+    marginTop: '5px'
   };
   return (
     <Card style={card}>
@@ -30,15 +33,7 @@ export default function ActionAreaCard(props) {
         <div>
           <h1 className="TitleBook">{props.title}</h1>
         </div>
-        <CardMedia
-          component={'img'}
-          height="330"
-          width="220px"
-          border="none"
-          image={props.img}
-          alt="BookIMG"
-        />
-
+        <CardMedia component={'img'} border="none" image={props.img} alt="BookIMG" />
         <CardContent sx={{ padding: 0 }}>
           <h2 className="DescBooks">ISBN:{props.ISBN}</h2>
           <h2 className="DescBooks2">Quantity:1</h2>

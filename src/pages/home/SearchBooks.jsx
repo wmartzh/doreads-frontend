@@ -4,9 +4,9 @@ import Card from '../../components/Card';
 import { getBooks } from '../../services/SearchBooks';
 import { useEffect, useState } from 'react';
 import CircularProgress from '../../components/CircularProgress';
-import Pagination from '@mui/material/Pagination';
 import SearchInput from '../../components/Search';
 import Filter from '../../components/SelectFilter';
+import PaginationStyled from '../../components/Pagination';
 
 const Search = () => {
   const [data, setData] = useState([]);
@@ -74,15 +74,14 @@ const Search = () => {
           ))}
         </div>
         <div className="Pagination">
-          <div className="Center">
-            <Pagination
-              color="primary"
+          <div className="CenterPag">
+            <PaginationStyled
               count={info.count}
               page={page}
               perpage={perPage}
               onChange={handlePageChange}
               hidePrevButton
-              hideNextButton></Pagination>
+              hideNextButton></PaginationStyled>
           </div>
         </div>
       </div>

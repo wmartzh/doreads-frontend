@@ -18,7 +18,7 @@ export default function BasicSelect(props) {
       fontFamily: 'Open Sans, sans-serif',
       padding: theme.spacing(1, 1, 1, 0),
       paddingLeft: `calc(1em + ${theme.spacing(0.2)})`,
-      width: '170px'
+      width: '190px'
     }
   }));
 
@@ -31,7 +31,7 @@ export default function BasicSelect(props) {
 
   return (
     <FormControl>
-      <InputLabel sx={{ fontSize: '14px' }}>Filter</InputLabel>
+      <InputLabel sx={{ fontSize: '1.3vh' }}>Filter</InputLabel>
       <Select2 label="Filter" id={props.selectId} value={value} onChange={handleChange}>
         {props.options &&
           props.options.map((el, i) => {

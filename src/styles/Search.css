@@ -1,33 +1,37 @@
 .ContFiltros{
-margin-top: 20px;
-    width: 100%vh;
-    height: 40px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 110px;
+    height: 10%vh;
     display: flex;
     justify-content: space-between;
 }
 
 .ButtonFilter{
-    margin-left: 54px;
     float: left;
 }
 
 .SearchInput{
-    margin-right: 53px;
     float: right;
 }
 
+.CenterPag{
+    margin: auto;
+}
 .Catalogo{
     display: grid;
-    height: 750px;
-    width: 100%vh;
-    margin-top: 10px;
+    padding: 5px;
+    max-width: 100%vh;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
     grid-template-columns: repeat(5, 1fr);
-    position: static;
 }
 
 .Pagination{
-    height: 40px;
-    display: grid;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .Cargando{
@@ -36,14 +40,15 @@ margin-top: 20px;
 }
 
 .TitleBook{
-    font-size: 16px;
+    font-size: 1.6vh;
     font-weight: bold;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
 }
 
 .DescBooks{
-    font-size: 12px;
+    font-size: 1.21vh;
+    width: 100%;
     font-weight: lighter;
     margin: 0px;
     padding: 0px;
@@ -53,7 +58,7 @@ margin-top: 20px;
 
 
 .DescBooks2{
-    font-size: 12px;
+    font-size: 1.3vh;
     font-weight: lighter;
     margin: 0px;
     padding: 0px;
