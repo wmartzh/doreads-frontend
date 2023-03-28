@@ -45,7 +45,7 @@ const Search = () => {
     <>
       <div className="ContMainBooks">
         <div className="ContHeaderSearch">
-          <Header TitlePage="Search Books"></Header>
+          <Header badgeCount={2} TitlePage="Search Books"></Header>
         </div>
         <div className="ContFiltros">
           <div className="ButtonFilter">
@@ -70,7 +70,16 @@ const Search = () => {
         <div className="Catalogo">
           {data.length === 0 && <CircularProgress></CircularProgress>}
           {data.map((props) => (
-            <Card key={props.id} title={props.title} ISBN={props.isbn} img={props.picture}></Card>
+            <Card
+              key={props.id}
+              year={props.year}
+              title={props.title}
+              ISBN={props.isbn}
+              img={props.picture}
+              editorial={props.editorial}
+              author={props.author}
+              category={props.category}
+              language={props.language}></Card>
           ))}
         </div>
         <div className="Pagination">

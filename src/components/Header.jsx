@@ -44,7 +44,7 @@ export default function ButtonAppBar(props) {
             {props.TitlePage}
           </Typography>
           <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
-            <Badge badgeContent={2} color="error">
+            <Badge badgeContent={props.badgeCount} color="error">
               {' '}
               <BookIcon style={Book} />
             </Badge>
