@@ -13,7 +13,7 @@ const Search = styled('div')(({ theme }) => ({
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(1.8, 1),
+  padding: theme.spacing(1.2, 1),
   position: 'absolute',
   pointerEvents: 'none',
   display: 'flex',
@@ -32,7 +32,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     fontFamily: 'Open Sans, sans-serif',
     paddingLeft: `calc(1em + ${theme.spacing(3)})`,
     width: '40vh',
-    height: '40px'
+    height: '30px'
   }
 }));
 
