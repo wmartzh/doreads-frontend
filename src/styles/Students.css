@@ -6,111 +6,32 @@
   width: 100%;
   min-height: 100vh;
 }
-
-.Students{  
-  margin: auto;   
+.Students {
+  margin: auto;
   min-width: 30%;
   height: 100%;
-  margin-right: 20px;	
+  margin-right: 20px;
 }
-
-.ContentStudents{
+.ContentStudents {
   display: flex;
   padding: 125px;
 }
-
 .DescStudents {
   max-width: 50%;
   max-height: 79vh;
 }
-
 .Title {
   font-family: 'Open Sans', sans-serif;
   font-style: semi-bold;
   font-size: 16px;
   padding: 10px;
 }
-
 .OverviewStudent {
-  border: 1px solid #b48114;
   display: flex;
   display: row;
   height: 100vh;
 }
-.RegiserStuden {
-  border: 1px solid #b48114;
-  display: flex;
-  display: row;
-  height: 99vh;
-}
-.ViewRegisterStudent {
-  border: 1px solid #e3dc239d;
-  width: 97px;
-  min-width: 167vh;
-  min-height: 84%;
-  border-color: #ffffff;
-  padding: 0px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: #ffffff;
-  display: flex;
-  position: absolute;
-  left: 290px;
-  top: 0px;
-}
-
-/* aca esta el findo de la vista de ViewOverride student*/
-.ViewStudent {
-  border: 1px solid #bd259f;
-  min-width: 164vh;
-  min-height: 84%;
-  border-color: #ffffff;
-  padding: 0px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: #ffffff;
-  display: flex;
-  position: absolute;
-  left: 290px;
-  top: 0px;
-}
-.BodyStuden {
-  border: 1px solid #114a82;
-  width: 80%;
-  min-width: 165vh;
-  min-height: 90%;
-  height: 10%;
-}
-.BodyOveridetudent {
-  border: 1px solid #1f8007;
-  width: 99%;
-  min-width: 166vh;
-  min-height: 98vh;
-  height: 10%;
-  margin-bottom: 8px;
-}
-.HeaderStudent {
-  border: 1px solid #07802b;
-  width: 94%;
-  min-width: 165vh;
-  min-height: 8vh;
-  height: 10%;
-  display: flex;
-  margin-bottom: 8px;
-}
-.OverideHeaderStudent {
-  border: 1px solid #07802b;
-  width: 94%;
-  min-width: 166vh;
-  min-height: 8vh;
-  height: 10%;
-  display: flex;
-  margin-bottom: 8px;
-}
 .CenterRegister {
-  border: 1px solid #07802b;
   display: flex;
   padding: 24px;
   margin: 24px;
@@ -118,69 +39,6 @@
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.TableCenter {
-  border: 1px solid #07802b;
-  display: flex;
-  padding: 8px;
-  margin: 2px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8px;
-  margin-bottom: 10px;
-}
-.AlertStudent {
-  border: 1px solid #000000;
-  display: flex;
-
-  width: 69%;
-  min-height: 65vh;
-  align-items: center;
-  height: 120%;
-}
-
-.form {
-  display: flex;
-  border: 1px solid #13b35e;
-  box-shadow: 0 0 5px hsl(206, 7%, 81%);
-  margin-left: 30px;
-  margin: 24px;
-  margin: 20px;
-  background: #a24e0e;
-  min-width: 90vh;
-  height: 80%;
-  min-height: 70%;
-  border-color: #d6d6d6;
-  padding: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: #ffffff;
-}
-.studentRegister {
-  border: 1px solid #9f1414;
-  display: flex;
-  display: row;
-  height: 52vh;
-  width: 99.7vh;
-}
-
-.Input {
-  margin-top: 40px;
-  background-color: #d6d6d6;
-  display: flex;
-  max-height: 40px;
-  width: 428.38px;
-  min-width: 50vh;
-  height: 39px;
-  margin-left: 10%;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
 }
 .ImageStudent {
   height: 237px;
@@ -219,125 +77,10 @@
   margin-left: 10%;
   margin-top: 10px;
 }
-
-/* margenes de distancias entre el texto y el imput */
-.PaddingStudent h1 {
-  margin-top: 2px;
-  position: relative;
-  left: 4px;
-  top: 35px;
-}
-
-.PaddingStudent1 h1 {
-  margin-top: 2px;
-  position: relative;
-  left: 4px;
-  top: 35px;
-}
-.PaddingStudent2 h1 {
-  margin-top: 2px;
-  position: relative;
-  left: 4px;
-  top: 35px;
-}
-.PaddingStudent3 h1 {
-  margin-top: 2px;
-  position: relative;
-  left: 4px;
-  top: 35px;
-}
-
-/* Students Overview */
-
-.BoardTable {
-  box-shadow: 0 0 5px hsl(206, 7%, 81%);
-  border-collapse: collapse;
-  min-width: 164vh;
-  min-height: 20%;
-}
-
-.BoardTable td {
-  border: 1px solid #d6d6d6;
-  padding: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: semi-bold;
-  font-size: 16px;
-  stroke: #d6d6d6;
-}
-
-.BoardTable th {
-  border: 1px solid #d6d6d6;
-  padding: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: semi-bold;
-  font-size: 16px;
-  stroke: #d6d6d6;
-}
-
-.BoardTable tr:nth-child(even) {
-  background-color: #ffffff;
-}
-
-.BorderBack {
-  border: 1px solid #ffffff;
-  min-width: 164vh;
-  min-height: 84%;
-  border-color: #ffffff;
-  padding: 15px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 10px;
-  background: #ffffff;
+.textImputado {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 50%;
   display: flex;
-  position: absolute;
-  left: 292px;
-  top: 70px;
-}
-
-.ButtonEdit {
-  background: #394c73;
-  border-radius: 10px;
-  width: 74px;
-  height: 39px;
-  border: none;
-  color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 39px;
-  text-align: center;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-.ButtonBlock {
-  background: #f53636;
-  border-radius: 10px;
-  width: 74px;
-  height: 39px;
-  border: none;
-  color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 39px;
-  text-align: center;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-}
-.BorderAll {
-  border: 1px solid #d6d6d6;
-  color: #000000;
-  stroke: #d6d6d6;
-  size: 12px;
+  flex-direction: column;
 }
