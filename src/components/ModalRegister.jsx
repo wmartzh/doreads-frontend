@@ -13,10 +13,17 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 500,
+  width: '35%',
+  height: 'auto',
   bgcolor: 'background.paper',
   borderRadius: '10px',
   boxShadow: 24,
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  minWidth: '10px',
+  maxWidth: '900px',
+
   p: -3
 };
 

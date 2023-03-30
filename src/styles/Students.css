@@ -26,6 +26,7 @@
   font-size: 16px;
   padding: 10px;
 }
+
 .OverviewStudent {
   display: flex;
   display: row;
@@ -115,6 +116,12 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 10px;
+  max-width: 200px;
+  width: 18%;
 }
 .BuuttoonnNoSi {
   display: flex;
