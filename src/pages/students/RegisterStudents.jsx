@@ -88,7 +88,13 @@ const RegisterStudents = () => {
           <div className="buttons">
             <img className="ImageStudent" src={graduated} alt="register" />
             <div className="LogiStudent">
-              <BootstrapButton onClick={handleSubmit} id="LogiStudent" text="Register Student" />
+              <BootstrapButton
+                width="200px"
+                height="44px"
+                onClick={handleSubmit}
+                id="LogiStudent"
+                TextIdit="Register Student"
+              />
             </div>
           </div>
         </Form>

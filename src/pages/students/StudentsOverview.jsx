@@ -7,10 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TablePagination from '@mui/material/TablePagination';
-import BootstrapButton from '../../components/btnBlue';
-import BootstrapButtonRed from '../../components/BtnRed';
 import { getStudents } from '../../services/student';
 import { TableSortLabel } from '@mui/material';
+import ModalRegister from '../../components/ModalRegister';
+import ModalBlock from '../../components/ModalBlock';
 import Header from '../../components/Header';
 
 const headers = [
@@ -75,9 +75,9 @@ const StudentsOverview = () => {
                     <TableCell>{row.email}</TableCell>
                     <TableCell>{row.phone}</TableCell>
                     <TableCell>{row.status}</TableCell>
-                    <TableCell>
-                      <BootstrapButton text="edit" />
-                      <BootstrapButtonRed text="Block" />
+                    <TableCell className="ModalCenterFlex">
+                      <ModalRegister></ModalRegister>
+                      <ModalBlock></ModalBlock>
                     </TableCell>
                   </TableRow>
                 ))}
