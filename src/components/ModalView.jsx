@@ -33,6 +33,7 @@ function BootstrapButton2() {
         TextInButton="View"
         color="#E9BD1F"
         width="200px"
+        fontSize="16px"
         height="44px"
         colorHover="#D4A20F"
         onClick={handleOpen}></ButtonJsx>

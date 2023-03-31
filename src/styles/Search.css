@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+.ContMainBooks{
+    height: 100%;
+}
+
+.ContFiltros{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 110px;
+    height: 10%vh;
+    width: 87%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ButtonFilter{
+
+    float: left;
+}
+
+.SearchInput{
+    float: right;
+}
+
+.CenterPag{
+    margin: auto;
+}
+
+.DescModal{
+    margin-top: 70%;
+}
+
+.ModalDetail{
+    font-size: 1.4vh;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+
+.ContModal1{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.ContModal2{
+    margiN-left: 15px;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.ModalCard{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.TitleModal{
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.SubTitleModal{
+    font-size: 1.5vh;
+    font-weight: lighter;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+.Catalogo{
+    display: grid;
+    padding: 5px;
+    max-width: 100%vh;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    grid-template-columns: repeat(5, 1fr);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.Pagination{
+    margin-top: 20px;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.Cargando{
+   margin-left: 50px; 
+   display: flex;
+}
+
+.TitleBook{
+    font-size: 1.6vh;
+    font-weight: bold;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.DescBooks{
+    font-size: 1.18vh;
+    width: 100%;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+}
+
+
+.DescBooks2{
+    font-size: 1.18vh;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    float: right;
+}
