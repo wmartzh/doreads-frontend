@@ -19,7 +19,13 @@ export default function ActionAreaCard(props) {
 
   const BookProps = {
     title: props.title,
-    author: props.author
+    author: props.author,
+    category: props.category,
+    isbn: props.ISBN,
+    image: props.img,
+    year: props.year,
+    language: props.language,
+    editorial: props.editorial
   };
 
   const handleOpen = () => {
