@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Button from '../components/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import SvgImg from '../assets/noimage.svg';
 
 export default function ActionAreaCard(props) {
   const [open, setOpen] = useState(false);
@@ -86,11 +87,12 @@ export default function ActionAreaCard(props) {
           sx={{
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
+            backgroundSize: 'cover',
+            height: 310
           }}
           component={'img'}
           border="none"
-          image={props.img}
+          image={props.img ? props.img : SvgImg}
           alt="BookIMG"
         />
         <CardContent sx={{ padding: 0 }}>
@@ -101,16 +103,18 @@ export default function ActionAreaCard(props) {
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <div className="ModalCard">
-            <img className="ContModal1" src={props.img}></img>
+            <img className="ContModal1" src={props.img ? props.img : SvgImg}></img>
             <div className="ContModal2">
               <h1 className="TitleModal">{props.title}</h1>
               <h1 className="SubTitleModal">ISBN:{props.ISBN}</h1>
               <div className="DescModal">
                 <h2 className="ModalDetail">Author:{props.author}</h2>
                 <h2 className="ModalDetail">Category:{props.category}</h2>
-                <h2 className="ModalDetail">Editorial:{props.editorial}</h2>
-                <h2 className="ModalDetail">language:{props.language}</h2>
-                <h2 className="ModalDetail">year:{props.year}</h2>
+                <h2 className="ModalDetail">
+                  Editorial:{props.editorial ? props.editorial : 'No Editorial'}
+                </h2>
+                <h2 className="ModalDetail">Language:{props.language}</h2>
+                <h2 className="ModalDetail">Year:{props.year}</h2>
               </div>
               <Button
                 open={openSnackbar}

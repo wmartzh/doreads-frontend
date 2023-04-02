@@ -75,7 +75,6 @@ const Search = () => {
               year={props.year}
               title={props.title}
               ISBN={props.isbn}
-              img={props.picture}
               editorial={props.editorial}
               author={props.author}
               category={props.category}
