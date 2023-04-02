@@ -45,7 +45,7 @@ const Search = () => {
     <>
       <div className="ContMainBooks">
         <div className="ContHeaderSearch">
-          <Header badgeCount={2} TitlePage="Search Books"></Header>
+          <Header TitlePage="Search Books"></Header>
         </div>
         <div className="ContFiltros">
           <div className="ButtonFilter">
@@ -77,6 +77,7 @@ const Search = () => {
               ISBN={props.isbn}
               editorial={props.editorial}
               author={props.author}
+              img={props.picture}
               category={props.category}
               language={props.language}></Card>
           ))}

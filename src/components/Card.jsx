@@ -3,19 +3,24 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '../components/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import SvgImg from '../assets/noimage.svg';
+import { BookContext } from '../providers/book.provider';
 
 export default function ActionAreaCard(props) {
   const [open, setOpen] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [book, setBook] = useState({});
-  const [badgeCount, setBadgeCount] = useState(0);
+  const { removeBook, addBook } = useContext(BookContext);
+
+  const BookProps = {
+    title: props.title,
+    author: props.author
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -31,9 +36,12 @@ export default function ActionAreaCard(props) {
 
   const handleAddBook = () => {
     setOpenSnackbar(true);
-    setBadgeCount(badgeCount + 1);
-    setBook(props);
-    console.log(props);
+    addBook(BookProps);
+  };
+
+  const handleDeleteBook = () => {
+    setOpenSnackbar(true);
+    removeBook(props);
   };
 
   const StyledCardActionArea = styled(CardActionArea)({
@@ -116,16 +124,24 @@ export default function ActionAreaCard(props) {
                 <h2 className="ModalDetail">Language:{props.language}</h2>
                 <h2 className="ModalDetail">Year:{props.year}</h2>
               </div>
-              <Button
-                open={openSnackbar}
-                badgeCount={badgeCount}
-                book={book}
-                onClick={handleAddBook}
-                height="44px"
-                width="100%"
-                TextInButton="Add Book"
-                color="#259E5D"
-                colorHover="#056D35"></Button>
+              <div className="ButModal">
+                <Button
+                  open={openSnackbar}
+                  onClick={handleAddBook}
+                  height="44px"
+                  width="50%"
+                  TextInButton="Add Book"
+                  color="#259E5D"
+                  colorHover="#056D35"></Button>
+                <Button
+                  open={openSnackbar}
+                  onClick={handleDeleteBook}
+                  height="44px"
+                  width="50%"
+                  TextInButton="Remove Book"
+                  color="#F53636"
+                  colorHover="#F53640"></Button>
+              </div>
             </div>
           </div>
         </Box>

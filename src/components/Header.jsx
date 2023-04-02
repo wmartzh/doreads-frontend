@@ -8,8 +8,11 @@ import Link from '@mui/material/Link';
 import Badge from '@mui/material/Badge';
 import BookIcon from '@mui/icons-material/Book';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { BookContext } from '../providers/book.provider';
+import { useContext } from 'react';
 
 export default function ButtonAppBar(props) {
+  const { badgeCount } = useContext(BookContext);
   const Back = () => {
     window.history.back();
   };
@@ -44,7 +47,7 @@ export default function ButtonAppBar(props) {
             {props.TitlePage}
           </Typography>
           <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
-            <Badge badgeContent={props.badgeCount} color="error">
+            <Badge badgeContent={badgeCount ? badgeCount : 0} color="error">
               {' '}
               <BookIcon style={Book} />
             </Badge>

@@ -120,3 +120,7 @@
     font-family: 'Open Sans', sans-serif;
     float: right;
 }
+
+.ButModal{
+    display: space-between;
+}
