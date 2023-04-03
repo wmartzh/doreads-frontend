@@ -7,17 +7,18 @@ import { useState, useContext } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '../components/Button';
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+import Snackbar from '../components/SnackBar';
+import Alert from '../components/AlertTest';
 import SvgImg from '../assets/noimage.svg';
 import { BookContext } from '../providers/book.provider';
 
 export default function ActionAreaCard(props) {
   const [open, setOpen] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const { removeBook, addBook } = useContext(BookContext);
+  const { removeBook, addBook, alert, severity } = useContext(BookContext);
 
   const BookProps = {
+    id: props.id,
     title: props.title,
     author: props.author,
     category: props.category,
@@ -42,12 +43,14 @@ export default function ActionAreaCard(props) {
 
   const handleAddBook = () => {
     setOpenSnackbar(true);
+    console.log(alert);
+    console.log(severity);
     addBook(BookProps);
   };
 
   const handleDeleteBook = () => {
+    removeBook(BookProps);
     setOpenSnackbar(true);
-    removeBook(props);
   };
 
   const StyledCardActionArea = styled(CardActionArea)({
@@ -75,7 +78,7 @@ export default function ActionAreaCard(props) {
   const style = {
     position: 'absolute',
     top: '50%',
-    left: '60%',
+    left: '50%',
     transform: 'translate(-50%, -50%)',
     height: 400,
     width: 500,
@@ -154,11 +157,11 @@ export default function ActionAreaCard(props) {
       </Modal>
       <Snackbar
         open={openSnackbar}
-        autoHideDuration={3000}
+        autoHideDuration={1700}
         onClose={handleCloseSnackbar}
-        key={'bottom' + 'left'}>
-        <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
-          This is a success message!
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Alert onClose={handleCloseSnackbar} severity={severity} sx={{ width: '100%' }}>
+          {alert}
         </Alert>
       </Snackbar>
     </Card>

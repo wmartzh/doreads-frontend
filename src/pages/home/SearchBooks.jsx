@@ -72,6 +72,7 @@ const Search = () => {
           {data.map((props) => (
             <Card
               key={props.id}
+              id={props.id}
               year={props.year}
               title={props.title}
               ISBN={props.isbn}
