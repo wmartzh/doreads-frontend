@@ -7,10 +7,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TablePagination from '@mui/material/TablePagination';
-import BootstrapButton from '../../components/btnBlue';
-import BootstrapButtonRed from '../../components/BtnRed';
 import { getStudents } from '../../services/student';
 import { TableSortLabel } from '@mui/material';
+import ModalRegister from '../../components/ModalRegister';
+import ModalBlock from '../../components/ModalBlock';
+import Header from '../../components/Header';
 
 const headers = [
   { id: 'code', label: 'Code', align: 'left' },
@@ -48,56 +49,50 @@ const StudentsOverview = () => {
   return (
     <>
       <div className="ViewStudent">
-        <div className="BodyOveridetudent">
-          <div className="OverideHeaderStudent">
-            <h1 className="Title">Register Student</h1>
-          </div>
-          <div>
-            <TableContainer>
-              <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-                <TableHead>
-                  <TableRow>
-                    {headers.map((column) => (
-                      <TableCell key={column.id} align={column.align}>
-                        <TableSortLabel
-                          active={sortOptions.order === column.id}
-                          direction={sortOptions.sort}
-                          onClick={() => handleSort(column.id)}>
-                          {column.label}
-                        </TableSortLabel>
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {data.map((row) => (
-                    <TableRow key={row.id}>
-                      <TableCell>{row.code}</TableCell>
-                      <TableCell>{row.name}</TableCell>
-                      <TableCell>{row.email}</TableCell>
-                      <TableCell>{row.phone}</TableCell>
-                      <TableCell>{row.status}</TableCell>
-                      <TableCell>
-                        <div>
-                          <BootstrapButton text="edit" />
-                          <BootstrapButtonRed text="Block" />
-                        </div>
-                      </TableCell>
-                    </TableRow>
+        <Header />
+        <div>
+          <TableContainer>
+            <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  {headers.map((column) => (
+                    <TableCell key={column.id} align={column.align}>
+                      <TableSortLabel
+                        active={sortOptions.order === column.id}
+                        direction={sortOptions.sort}
+                        onClick={() => handleSort(column.id)}>
+                        {column.label}
+                      </TableSortLabel>
+                    </TableCell>
                   ))}
-                </TableBody>
-              </Table>
-              <TablePagination
-                rowsPerPageOptions={[10, 20, 30]}
-                component="div"
-                count={info.count || 0}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={(_e, newPage) => setPage(newPage)}
-                onRowsPerPageChange={(e) => setRowsPerPage(parseInt(e.target.value))}
-              />
-            </TableContainer>
-          </div>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {data.map((row) => (
+                  <TableRow key={row.id}>
+                    <TableCell>{row.code}</TableCell>
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell>{row.email}</TableCell>
+                    <TableCell>{row.phone}</TableCell>
+                    <TableCell>{row.status}</TableCell>
+                    <TableCell className="ModalCenterFlex">
+                      <ModalRegister></ModalRegister>
+                      <ModalBlock></ModalBlock>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            <TablePagination
+              rowsPerPageOptions={[10, 20, 30]}
+              component="div"
+              count={info.count || 0}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={(_e, newPage) => setPage(newPage)}
+              onRowsPerPageChange={(e) => setRowsPerPage(parseInt(e.target.value))}
+            />
+          </TableContainer>
         </div>
       </div>
     </>
