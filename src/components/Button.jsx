@@ -10,7 +10,7 @@ function Buttons(props) {
     width: props.width,
     height: props.height,
     borderRadius: '10px',
-    fontSize: 16,
+    fontSize: props.fontSize,
     padding: '6px 12px',
     lineHeight: 1.5,
     backgroundColor: props.color,
