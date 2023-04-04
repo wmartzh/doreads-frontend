@@ -7,61 +7,73 @@ import DatePickerComp from '../../components/DatePicker';
 import Button from '../../components/Button';
 import BasicSelect from '../../components/Select';
 import AlertComp from '../../components/Alert';
-import { ValidateBook, createBook } from '../../services/book';
+import { bookSchema } from '../../models/BookModels';
+import { createBook } from '../../services/book';
 import { useState } from 'react';
 const RegisterBook = () => {
-  const [BookTitle, setBookTitle] = useState('');
-  const [BookAuthor, setBookAuthor] = useState('');
-  const [BookISBN, setBookISBN] = useState('');
-  const [BookCategory, setBookCategory] = useState('');
-  const [BookYear, setBookYear] = useState('');
-  const [BookPicture, setBookPicture] = useState('');
-  const [BookEditorial, setBookEditorial] = useState('');
-  const [BookLanguage, setBookLanguage] = useState('');
-  const resetForm = () => {
-    setBookTitle('');
-    setBookAuthor('');
-    setBookISBN('');
-    setBookCategory('');
-    setBookYear('');
-    setBookPicture('');
-    setBookEditorial('');
-    setBookLanguage('');
+  const ValidateBook = (book) => {
+    return bookSchema.validate(book);
   };
+  const [file, setFile] = useState(null);
+  const handleFileUpload = (event) => {
+    setFile(event.target.files[0]);
+  };
+  // const [BookTitle, setBookTitle] = useState('');
+  // const [BookAuthor, setBookAuthor] = useState('');
+  // const [BookISBN, setBookISBN] = useState('');
+  // const [BookCategory, setBookCategory] = useState('');
+  // const [BookYear, setBookYear] = useState('');
+  // const [BookPicture, setBookPicture] = useState('');
+  // const [BookEditorial, setBookEditorial] = useState('');
+  // const [BookLanguage, setBookLanguage] = useState('');
+  // const resetForm = () => {
+  //   setBookTitle('');
+  //   setBookAuthor('');
+  //   setBookISBN('');
+  //   setBookCategory('');
+  //   setBookYear('');
+  //   setBookPicture('');
+  //   setBookEditorial('');
+  //   setBookLanguage('');
+  // };
   async function collectBookData(method) {
     try {
-      const tbook = {
-        title: BookTitle,
-        author: BookAuthor,
-        isbn: BookISBN,
-        category: BookCategory,
-        year: BookYear,
-        picture: BookPicture,
-        editorial: BookEditorial,
-        language: BookLanguage
-      };
-      console.log(tbook);
+      // const tbook = {
+      //   title: BookTitle,
+      //   author: BookAuthor,
+      //   isbn: BookISBN,
+      //   category: BookCategory,
+      //   year: BookYear,
+      //   picture: BookPicture,
+      //   editorial: BookEditorial,
+      //   language: BookLanguage
+      // };
+      // console.log(tbook);
       const book = {
         title: document.getElementById('BookTitle').value,
         author: document.getElementById('BookAuthor').value,
         isbn: document.getElementById('BookISBN').value,
         category: document.getElementById('BookCategory').innerHTML.toString(),
         year: document.getElementById('BookYear').getAttribute('value'),
-        picture: document.getElementById('BookPicture').value,
         editorial: document.getElementById('BookEditorial').value,
         language: document.getElementById('BookLanguage').innerHTML.toString()
       };
+      if (file) {
+        book.picture = file;
+      }
       if (ValidateBook(book)) {
         try {
           const ApiCall = await createBook(book);
           console.log(ApiCall);
           if (ApiCall.status === 200) {
             method({ isOpen: true, message: 'Book Created', severity: 'success' });
-            resetForm();
-          } else if (ApiCall.response.status === 400) {
-            method({ isOpen: true, message: 'Book Already Exists', severity: 'error' });
+            // resetForm();
           } else {
-            method({ isOpen: true, message: 'Error Creating Book', severity: 'error' });
+            method({
+              isOpen: true,
+              message: `Error Creating Book (${ApiCall.status})`,
+              severity: 'error'
+            });
           }
         } catch (error) {
           throw new Error('Error Creating Book');
@@ -70,6 +82,7 @@ const RegisterBook = () => {
         throw new Error('Missing Fields');
       }
     } catch (error) {
+      console.log(error);
       if (error.message === 'Missing Fields') {
         method({ isOpen: true, message: 'Missing Fields', severity: 'error' });
       } else {
@@ -115,14 +128,13 @@ const RegisterBook = () => {
               type="text"
               variant="outlined"
             />
-            <InputLabel InputLabel="Picture"></InputLabel>
+            <InputLabel InputLabel="Picture (Optional)"></InputLabel>
             <Input
-              height="44px"
-              width="100%"
+              label="Picture"
+              type="file"
               id="BookPicture"
-              placeholder="Enter Picture URL"
-              type="text"
-              variant="outlined"
+              inputProps={{ accept: 'image/jpeg, image/png' }}
+              onChange={handleFileUpload}
             />
             <InputLabel InputLabel="Editorial"></InputLabel>
             <Input

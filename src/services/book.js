@@ -1,5 +1,4 @@
 import axios from './axios';
-import { bookSchema } from '../models/BookModels';
 const booksBase = '/book/register';
 
 export async function createBook(book) {
@@ -11,7 +10,3 @@ export async function createBook(book) {
     return error.response;
   }
 }
-
-export const ValidateBook = (book) => {
-  return bookSchema.validate(book);
-};
