@@ -7,7 +7,7 @@ import DatePickerComp from '../../components/DatePicker';
 import Button from '../../components/Button';
 import BasicSelect from '../../components/Select';
 import AlertComp from '../../components/Alert';
-import { ValidateBook } from '../../services/book';
+import { ValidateBook, createBook } from '../../services/book';
 import { useState } from 'react';
 const RegisterBook = () => {
   const [BookTitle, setBookTitle] = useState('');
@@ -30,6 +30,17 @@ const RegisterBook = () => {
   };
   async function collectBookData(method) {
     try {
+      const tbook = {
+        title: BookTitle,
+        author: BookAuthor,
+        isbn: BookISBN,
+        category: BookCategory,
+        year: BookYear,
+        picture: BookPicture,
+        editorial: BookEditorial,
+        language: BookLanguage
+      };
+      console.log(tbook);
       const book = {
         title: document.getElementById('BookTitle').value,
         author: document.getElementById('BookAuthor').value,
@@ -46,6 +57,7 @@ const RegisterBook = () => {
           console.log(ApiCall);
           if (ApiCall.status === 200) {
             method({ isOpen: true, message: 'Book Created', severity: 'success' });
+            resetForm();
           } else if (ApiCall.response.status === 400) {
             method({ isOpen: true, message: 'Book Already Exists', severity: 'error' });
           } else {
