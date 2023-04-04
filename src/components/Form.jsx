@@ -13,8 +13,12 @@ function Form(props) {
     display: 'flex',
     overflow: 'hidden'
   };
+  const handleReset = () => {
+    Document.getElementById(props.id).reset();
+  };
+
   return (
-    <form style={form} onSubmit={props.submit}>
+    <form style={form} onSubmit={props.submit} onReset={handleReset} id={props.id}>
       {props.children}
     </form>
   );
