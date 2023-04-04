@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+.ContMain{
+    padding: 0;
+    display: row;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ContHeader{
+    display: flex;
+    height: 10vh;
+}
+
+.ContForm{
+    width: 98.5%;
+    margin-top: 100px;
+    padding: 10px;
+    max-height: 85%;
+    overflow: hidden;
+}
+
+.Label{
+    font-family: 'Open Sans', sans-serif;
+    font-style: semi-bold;;
+    font-size: 16px;
+    margin-top: 10px;  
+}
+.sideBar{
+    width: 275px;
+    height: 100%;  
+}
+ 
+#form1{
+    font-family: 'Open Sans', sans-serif;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #FEFEFF;
+    padding: 30px;
+    margin: auto;
+    width: 60%;
+    max-height: 80vh;
+    box-shadow: 0 0 5px hsl(206, 7%, 81%);
+    display: flex;
+    overflow: hidden;
+}
+
+.textFields1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.textFields2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input1[type=text] , .input1[type=password] {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f6f6f6;
+    border: none;
+    color: #D6D6D6;
+    text-indent:0.5em;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  .input1[type=text]:focus , .input1[type=password]:focus ,.input1[type=email]:focus{
+    outline: none;
+    border-bottom: 2px solid #394c73;
+  } 
+  
+  .input1[type=text], .input1[type=password], ::placeholder {
+    color: #D6D6D6;
+  }
+
+  .input1[type=text], .input1[type=password], :focus::placeholder {
+    color: #000000;
+  }
+  
+  .show{
+    font-size: 12px;
+    margin:0;
+    margin-left: auto;
+  }
+  
+  .mensaje{
+    display: flex;
+    margin-left: auto;
+    width: 100%;
+    height: auto;
+    border-color: #000000 1px solid;
+  }
+  .iconInput1 {
+    min-width: 20px;
+    max-height: 20px;
+    text-align: center;
+
+}
+
+.errorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 80%;
+}
+
+.Worker1{
+    width: 70%;
+    height: 40%px;
+    margin: auto;
+}
+
+.View{
+  margin: auto;
+}
+
+.Title2{
+  font-size: 16px;
+  margin: 0;
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: semi-bold;
+}
+.Text1{
+  margin: 0;
+  padding: 0px;
+  font-size: 16px;
+}
+
+.Center{
+  display: grid;
+  margin: auto;
+}
+
+.CenterButton{
+  padding: 10px;
+  margin: auto;
+}
