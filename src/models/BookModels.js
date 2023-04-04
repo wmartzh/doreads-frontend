@@ -6,7 +6,7 @@ export const bookSchema = Joi.object({
   isbn: Joi.string().required(),
   category: Joi.string().required(),
   year: Joi.number().required(),
-  picture: Joi.string().optional(),
+  picture: Joi.any().optional(),
   editorial: Joi.string().optional(),
   language: Joi.string().required()
 });

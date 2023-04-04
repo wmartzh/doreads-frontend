@@ -8,7 +8,9 @@ import { useState } from 'react';
 export default function BasicSelect(props) {
   const [value, setValue] = useState('');
   const handleChange = async (event) => {
-    await setValue(event.target.value);
+    const newValue = event.target.value;
+    setValue(newValue);
+    props.onChange(newValue);
   };
   return (
     <Box sx={{ width: props.width }}>

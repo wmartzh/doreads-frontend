@@ -8,14 +8,17 @@ const DatePickerComp = (props) => {
   const [value, setValue] = useState('');
 
   const changeHandler = (newValue) => {
+    setValue(newValue.toString());
     let date = new Date(newValue);
     let finalDate = date.getFullYear();
     setValue(finalDate);
+    props.onChange(finalDate);
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Box sx={{ width: '50%' }} id={props.dpickerId} value={value}>
+      <input type="hidden" id={props.dpickerId} value={value} />
+      <Box sx={{ width: '50%' }} value={value}>
         <DatePicker label={props.label} onChange={changeHandler} />
       </Box>
     </LocalizationProvider>
