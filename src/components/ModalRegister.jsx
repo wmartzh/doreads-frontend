@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '../components/Label';
 import Input from '../components/Input.jsx';
@@ -7,8 +7,6 @@ import Modal from '@mui/material/Modal';
 import BootstrapButton from '../components/btnBlue';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { getStudents } from '../services/student';
-import axios from 'axios';
 
 const style = {
   position: 'absolute',
@@ -31,141 +29,110 @@ const style = {
 
 export default function ModalEdit(props) {
   const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [statusValue, setStatusValue] = useState(props.student.status);
   const statusOptions = ['ACTIVE', 'BLOCKED', 'INACTIVE'];
-
-  const [totalStudents, setTotalStudents] = useState(0);
-  const [selectedStudentId, setSelectedStudentId] = useState(null);
-  const [code, setCode] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [status, setStatus] = useState('');
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    getStudents(0, 0, { order: 'id', sort: 'asc' }).then((students) => {
-      setTotalStudents(students.total);
-    });
-  }, []);
-
-  const limit = totalStudents > 100 ? 100 : totalStudents;
-  useEffect(() => {
-    getStudents(0, limit, { order: 'id', sort: 'asc' }).then((students) => {
-      setStudents(students);
-    });
-  }, [totalStudents, limit]);
-
-  const handleOpen = (id) => {
-    setSelectedStudentId(id);
-    setOpen(true);
-  };
+  const { student } = props;
 
   const handleSave = () => {
-    const updatedStudent = { code, name, email, phone, status };
-    console.log(updatedStudent);
+    const codeValue = document.getElementById('Code').value;
+    const nameValue = document.getElementById('Name').value;
+    const emailValue = document.getElementById('Email').value;
+    const phoneValue = document.getElementById('Phone').value;
 
-    if (selectedStudentId) {
-      axios
-        .put(`http://localhost:8000/student/${selectedStudentId}`, updatedStudent)
-        .then((response) => {
-          console.log(response);
-          props.handleSave();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      console.error('No se ha seleccionado un estudiante');
-    }
+    const updatedStudent = {
+      ...student,
+      code: codeValue,
+      name: nameValue,
+      email: emailValue,
+      phone: phoneValue,
+      status: statusValue
+    };
+    props.onUpdateStudent(updatedStudent);
+    handleClose();
   };
-
   return (
     <div>
-      {students.map((student) => (
-        <div key={student.id}>
-          <BootstrapButton
-            TextIdit="Edit"
-            width="80px"
-            height="40px"
-            colorHover="#D4A20F"
-            float="left"
-            onClick={() => handleOpen(student.id)}
-          />
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description">
-            <Box sx={style}>
-              <Form width="100%">
-                <div className="TextEdit">
-                  <InputLabel InputLabel="Enter code"></InputLabel>
-                  <Input
-                    type="text"
-                    name="code"
-                    id="Code"
-                    placeholder="Code: 1111-1111"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                  />
-                  <InputLabel InputLabel="Enter name"></InputLabel>
-                  <Input
-                    type="text"
-                    name="name"
-                    id="Name"
-                    placeholder="Name: John Doe"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  <InputLabel InputLabel="Enter email"></InputLabel>
-                  <Input
-                    type="text"
-                    name="email"
-                    id="Email"
-                    placeholder="Email: johndoe@ejemplo.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <InputLabel InputLabel="Enter phone"></InputLabel>
-                  <Input
-                    type="text"
-                    name="phone"
-                    id="Phone"
-                    placeholder="Phone: +506 88888888"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                  <InputLabel InputLabel="Select Status"></InputLabel>
-                  <Autocomplete
-                    value={status}
-                    onChange={(event, newValue) => {
-                      setStatus(newValue);
-                    }}
-                    inputValue={status}
-                    onInputChange={(event, newInputValue) => {
-                      setStatus(newInputValue);
-                    }}
-                    id="status-autocomplete"
-                    options={statusOptions}
-                    sx={{ width: 530 }}
-                    renderInput={(params) => <TextField {...params} label="Status" />}
-                  />
-                  <div className="LogiStudentt">
-                    <BootstrapButton
-                      width="200px"
-                      height="44px"
-                      id="LogiStudentt"
-                      TextIdit="Save Student"
-                      onClick={handleSave}
-                    />
-                  </div>
-                </div>
-              </Form>
-            </Box>
-          </Modal>
-        </div>
-      ))}
+      <div>
+        <BootstrapButton
+          TextIdit="Edit"
+          width="80px"
+          height="40px"
+          colorHover="#D4A20F"
+          float="left"
+          onClick={handleOpen}
+        />
+      </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <Form width="100%">
+            <div className="TextEdit">
+              <InputLabel InputLabel="Enter code"></InputLabel>
+              <Input
+                type="text"
+                name="code"
+                id="Code"
+                placeholder="Code: 1111-1111"
+                defaultValue={student.code}
+              />
+              <InputLabel InputLabel="Enter name"></InputLabel>
+              <Input
+                type="text"
+                name="name"
+                id="Name"
+                placeholder="Name: John Doe"
+                defaultValue={student.name}
+              />
+              <InputLabel InputLabel="Enter email"></InputLabel>
+              <Input
+                type="text"
+                name="email"
+                id="Email"
+                placeholder="Email: johndoe@ejemplo.com"
+                defaultValue={student.email}
+              />
+              <InputLabel InputLabel="Enter phone"></InputLabel>
+              <Input
+                type="text"
+                name="phone"
+                id="Phone"
+                placeholder="Phone: +506 88888888"
+                defaultValue={student.phone}
+              />
+              <InputLabel InputLabel="Select Status"></InputLabel>
+              <Autocomplete
+                value={statusValue}
+                onChange={(event, newValue) => {
+                  setStatusValue(newValue);
+                }}
+                inputValue={statusValue}
+                onInputChange={(event, newInputValue) => {
+                  setStatusValue(newInputValue);
+                }}
+                id="status-autocomplete"
+                options={statusOptions}
+                sx={{ width: 530 }}
+                renderInput={(params) => <TextField {...params} label="Status" />}
+              />
+              <div className="LogiStudentt">
+                <BootstrapButton
+                  width="200px"
+                  height="44px"
+                  id="LogiStudentt"
+                  TextIdit="Save Student"
+                  onClick={handleSave}
+                />
+              </div>
+            </div>
+          </Form>
+        </Box>
+      </Modal>
     </div>
   );
 }

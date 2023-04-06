@@ -119,8 +119,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  min-width: 10px;
-  max-width: 200px;
+  min-width: 20px;
+  max-width: 10px;
   width: 18%;
 }
 .BuuttoonnNoSi {

@@ -9,9 +9,10 @@ import TableRow from '@mui/material/TableRow';
 import TablePagination from '@mui/material/TablePagination';
 import { getStudents } from '../../services/student';
 import { TableSortLabel } from '@mui/material';
-import ModalRegister from '../../components/ModalRegister';
-import ModalBlock from '../../components/ModalBlock';
 import Header from '../../components/Header';
+import BootstrapButton from '../../components/btnBlue';
+import BootstrapButtonRed from '../../components/BtnRed';
+import ModalRegister from '../../components/ModalRegister';
 
 const headers = [
   { id: 'code', label: 'Code', align: 'left' },
@@ -68,16 +69,32 @@ const StudentsOverview = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {data.map((row) => (
-                  <TableRow key={row.id}>
-                    <TableCell>{row.code}</TableCell>
-                    <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.email}</TableCell>
-                    <TableCell>{row.phone}</TableCell>
-                    <TableCell>{row.status}</TableCell>
+                {data.map((props) => (
+                  <TableRow key={props.id}>
+                    <TableCell>{props.code}</TableCell>
+                    <TableCell>{props.name}</TableCell>
+                    <TableCell>{props.email}</TableCell>
+                    <TableCell>{props.phone}</TableCell>
+                    <TableCell>{props.status}</TableCell>
                     <TableCell className="ModalCenterFlex">
-                      <ModalRegister></ModalRegister>
-                      <ModalBlock></ModalBlock>
+                      <ModalRegister student={props}>
+                        <BootstrapButton
+                          TextIdit="Edit"
+                          width="80px"
+                          height="44px"
+                          fontSize="16px"
+                          margin="10px"
+                          float="left"
+                        />
+                      </ModalRegister>
+                      <BootstrapButtonRed
+                        TextBlock="Block"
+                        width="80px"
+                        height="44px"
+                        fontSize="16px"
+                        margin="0"
+                        float="right"
+                      />
                     </TableCell>
                   </TableRow>
                 ))}
