@@ -12,6 +12,7 @@ import { TableSortLabel } from '@mui/material';
 import Header from '../../components/Header';
 import BootstrapButton from '../../components/btnBlue';
 import BootstrapButtonRed from '../../components/BtnRed';
+import ModalBlock from '../../components/ModalBlock';
 import ModalRegister from '../../components/ModalRegister';
 
 const headers = [
@@ -70,7 +71,7 @@ const StudentsOverview = () => {
               </TableHead>
               <TableBody>
                 {data.map((props) => (
-                  <TableRow key={props.id}>
+                  <TableRow className="table-row" key={props.id}>
                     <TableCell>{props.code}</TableCell>
                     <TableCell>{props.name}</TableCell>
                     <TableCell>{props.email}</TableCell>
@@ -87,14 +88,16 @@ const StudentsOverview = () => {
                           float="left"
                         />
                       </ModalRegister>
-                      <BootstrapButtonRed
-                        TextBlock="Block"
-                        width="80px"
-                        height="44px"
-                        fontSize="16px"
-                        margin="0"
-                        float="right"
-                      />
+                      <ModalBlock Student={props.student}>
+                        <BootstrapButtonRed
+                          TextBlock="Block"
+                          width="80px"
+                          height="44px"
+                          fontSize="16px"
+                          margin="0"
+                          float="right"
+                        />
+                      </ModalBlock>
                     </TableCell>
                   </TableRow>
                 ))}

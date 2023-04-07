@@ -7,6 +7,7 @@ import Modal from '@mui/material/Modal';
 import BootstrapButton from '../components/btnBlue';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import axios from 'axios';
 
 const style = {
   position: 'absolute',
@@ -29,29 +30,46 @@ const style = {
 
 export default function ModalEdit(props) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const [statusValue, setStatusValue] = useState(props.student.status);
-  const statusOptions = ['ACTIVE', 'BLOCKED', 'INACTIVE'];
-  const { student } = props;
+  const [student, setStudent] = useState(props.student);
+  const [statusValue, setStatusValue] = useState(student.status);
+  const statusOptions = ['ACTIVE', 'INACTIVE'];
 
-  const handleSave = () => {
-    const codeValue = document.getElementById('Code').value;
-    const nameValue = document.getElementById('Name').value;
-    const emailValue = document.getElementById('Email').value;
-    const phoneValue = document.getElementById('Phone').value;
-
-    const updatedStudent = {
-      ...student,
-      code: codeValue,
-      name: nameValue,
-      email: emailValue,
-      phone: phoneValue,
-      status: statusValue
-    };
-    props.onUpdateStudent(updatedStudent);
-    handleClose();
+  const handleOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleEdit = () => {
+    const token = localStorage.getItem('token');
+    axios
+      .put(
+        `http://localhost:8001/student/${student.id}`,
+        {
+          code: student.code,
+          name: student.name,
+          email: student.email,
+          phone: student.phone,
+          status: statusValue
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then((response) => {
+        console.log('Student Adolfo updated successfully', response);
+        setOpen(false);
+        setStudent(response.data);
+      })
+      .catch((error) => {
+        console.log('Estoy en el catch ', error);
+      });
+  };
+
   return (
     <div>
       <div>
@@ -80,6 +98,7 @@ export default function ModalEdit(props) {
                 id="Code"
                 placeholder="Code: 1111-1111"
                 defaultValue={student.code}
+                onChange={(event) => setStudent({ ...student, code: event.target.value })}
               />
               <InputLabel InputLabel="Enter name"></InputLabel>
               <Input
@@ -88,6 +107,7 @@ export default function ModalEdit(props) {
                 id="Name"
                 placeholder="Name: John Doe"
                 defaultValue={student.name}
+                onChange={(event) => setStudent({ ...student, name: event.target.value })}
               />
               <InputLabel InputLabel="Enter email"></InputLabel>
               <Input
@@ -96,6 +116,7 @@ export default function ModalEdit(props) {
                 id="Email"
                 placeholder="Email: johndoe@ejemplo.com"
                 defaultValue={student.email}
+                onChange={(event) => setStudent({ ...student, email: event.target.value })}
               />
               <InputLabel InputLabel="Enter phone"></InputLabel>
               <Input
@@ -104,6 +125,7 @@ export default function ModalEdit(props) {
                 id="Phone"
                 placeholder="Phone: +506 88888888"
                 defaultValue={student.phone}
+                onChange={(event) => setStudent({ ...student, phone: event.target.value })}
               />
               <InputLabel InputLabel="Select Status"></InputLabel>
               <Autocomplete
@@ -126,7 +148,7 @@ export default function ModalEdit(props) {
                   height="44px"
                   id="LogiStudentt"
                   TextIdit="Save Student"
-                  onClick={handleSave}
+                  onClick={handleEdit}
                 />
               </div>
             </div>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -22,8 +22,13 @@ const style = {
 
 export default function TransitionsModal() {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -32,7 +37,8 @@ export default function TransitionsModal() {
         width="80px"
         height="40px"
         float="right"
-        onClick={handleOpen}></BootstrapButtonRed>
+        onClick={handleOpen}
+      />
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -52,10 +58,15 @@ export default function TransitionsModal() {
             </div>
             <div className="BuuttoonnNoSi">
               <div>
-                <BootstrapButtonRed TextBlock="No" width="180px" height="40px"></BootstrapButtonRed>
+                <BootstrapButtonRed
+                  TextBlock="No"
+                  width="180px"
+                  height="40px"
+                  onClick={handleClose}
+                />
               </div>
               <div>
-                <ButtonSiBlock TextIdit="Yes" width="180px" height="40px"></ButtonSiBlock>
+                <ButtonSiBlock TextIdit="Yes" width="180px" height="40px" />
               </div>
             </div>
           </Box>
