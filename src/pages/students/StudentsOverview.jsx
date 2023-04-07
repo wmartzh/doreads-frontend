@@ -88,7 +88,7 @@ const StudentsOverview = () => {
                           float="left"
                         />
                       </ModalRegister>
-                      <ModalBlock Student={props.student}>
+                      <ModalBlock student={props}>
                         <BootstrapButtonRed
                           TextBlock="Block"
                           width="80px"
