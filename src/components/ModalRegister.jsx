@@ -45,8 +45,6 @@ export default function ModalEdit(props) {
 
   const handleEdit = () => {
     const token = localStorage.getItem('token');
-    console.log('Soy yo ', student);
-    console.log('soy el estatus ', statusValue);
     axios
       .put(
         `http://localhost:8000/student/${student.id}`,
