@@ -30,6 +30,7 @@ const style = {
 
 export default function ModalEdit(props) {
   const [open, setOpen] = useState(false);
+
   const [student, setStudent] = useState(props.student);
   const [statusValue, setStatusValue] = useState(student.status);
   const statusOptions = ['ACTIVE', 'INACTIVE'];
@@ -44,9 +45,11 @@ export default function ModalEdit(props) {
 
   const handleEdit = () => {
     const token = localStorage.getItem('token');
+    console.log('Soy yo ', student);
+    console.log('soy el estatus ', statusValue);
     axios
       .put(
-        `http://localhost:8001/student/${student.id}`,
+        `http://localhost:8000/student/${student.id}`,
         {
           code: student.code,
           name: student.name,
@@ -61,7 +64,7 @@ export default function ModalEdit(props) {
         }
       )
       .then((response) => {
-        console.log('Student Adolfo updated successfully', response);
+        console.log('Student updated successfully', response);
         setOpen(false);
         setStudent(response.data);
       })

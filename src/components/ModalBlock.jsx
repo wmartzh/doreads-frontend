@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade';
 import BootstrapButtonRed from '../components/BtnRed';
 import ButtonSiBlock from '../components/btnBlue';
 import axios from 'axios';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -36,7 +37,7 @@ export default function TransitionsModal(props) {
   const handleBlock = () => {
     const token = localStorage.getItem('token');
     axios
-      .get(`http://localhost:8001/student/${selectedStudentId}/change-status/BLOCKED`, {
+      .get(`http://localhost:8000/student/${selectedStudentId}/change-status/BLOCKED`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -81,20 +82,13 @@ export default function TransitionsModal(props) {
               <div>
                 <BootstrapButtonRed
                   TextBlock="No"
-                  id="boton-no"
                   width="180px"
                   height="40px"
                   onClick={handleClose}
                 />
               </div>
               <div>
-                <ButtonSiBlock
-                  TextIdit="Yes"
-                  id="boton"
-                  width="180px"
-                  height="40px"
-                  onClick={handleBlock}
-                />
+                <ButtonSiBlock TextIdit="Yes" width="180px" height="40px" onClick={handleBlock} />
               </div>
             </div>
           </Box>
