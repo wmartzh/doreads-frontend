@@ -7,7 +7,7 @@ import stud from '../assets/graduated.svg';
 
 function SideBar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar2">
       <img src={foto} className="icon"></img>
       <SidebarLink text="Home" img1={home} href="/" />
       <SidebarLink text="Books" img1={openbooks} href="/books" />

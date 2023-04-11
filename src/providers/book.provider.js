@@ -43,7 +43,6 @@ export const BookProvider = ({ children }) => {
   }, []);
 
   const addBook = (BookProps) => {
-    console.log(BookProps);
     if (BookProps.title && BookProps.author && BookProps.year && BookProps.id !== undefined) {
       const existingBook = books.find((book) => book.id === BookProps.id);
       if (!existingBook) {
@@ -53,8 +52,6 @@ export const BookProvider = ({ children }) => {
         setAlert('Book added');
       } else {
         setAlert('Book already exists');
-        console.log(alert);
-        console.log(books);
       }
     }
   };
@@ -64,11 +61,9 @@ export const BookProvider = ({ children }) => {
     if (RemoveBook !== -1) {
       setBadgeCount(books.length - 1 > 0 ? books.length - 1 : 0);
       setBooks([...books.slice(0, RemoveBook), ...books.slice(RemoveBook + 1)]);
-      console.log(books);
       setAlert('Book removed');
     } else {
       setAlert('Book not found');
-      console.log(alert);
     }
   };
 

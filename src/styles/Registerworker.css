@@ -14,10 +14,10 @@
 
 .ContForm{
     width: 98.5%;
-    margin-top: 100px;
     padding: 10px;
     max-height: 85%;
     overflow: hidden;
+    margin-bottom: 100px;
 }
 
 .Label{

@@ -29,7 +29,6 @@ instance.interceptors.response.use(
       localStorage.removeItem('accessToken');
       window.location.reload();
     }
-
     if (status === 403 && !originalRequest._retry) {
       originalRequest._retry = true;
 
