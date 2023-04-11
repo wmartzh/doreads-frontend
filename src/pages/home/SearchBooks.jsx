@@ -25,7 +25,6 @@ const Search = () => {
       const response = await getBooks(page, perPage, search, sort);
       setData(response.data);
       setInfo(response.info);
-      console.log(response);
     };
     getData();
   }, [page, perPage, search, sort]);
@@ -59,7 +58,6 @@ const Search = () => {
             <SearchInput
               height="10px"
               onChange={(e) => {
-                console.log(e.target.value);
                 setSearch(e.target.value);
                 setPage(1);
               }}
