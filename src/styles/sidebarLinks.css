@@ -2,7 +2,6 @@
 .link{
     display: flex;
     align-items: cover;
-    cursor: pointer;
     padding: 7px;
     margin-left: 10px;
     color: white;
@@ -12,7 +11,8 @@
     background-color: #D6D6D6;
     width: 85%;
     border-radius: 10px;
-    
+    cursor: pointer;
+    pointer-events: auto;
 }
 .link > h1{
     margin-left: 10px;

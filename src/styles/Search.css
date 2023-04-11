@@ -122,5 +122,5 @@
 }
 
 .ButModal{
-    display: space-between;
+    display: flex;
 }

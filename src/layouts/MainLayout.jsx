@@ -8,7 +8,7 @@ export default function MainLayout() {
     <>
       <BookProvider>
         <div className="body">
-          <div className="sideBar">
+          <div className="sidebar">
             <Sidebar />
           </div>
           <div className="cont">

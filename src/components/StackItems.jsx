@@ -26,8 +26,6 @@ function Items(props) {
     fontSize: '21px',
     width: '85%',
     height: '60%',
-    minWidth: '400px',
-    maxHeight: '400px',
     fontStyle: 'light',
     fontFamily: ['Open Sans', 'sans-serif'],
     cursor: 'pointer',

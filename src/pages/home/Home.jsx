@@ -16,7 +16,7 @@ const home = () => {
               The book catalog is waiting for you, by clicking the button go directly to it and
               Manage your books
             </h4>
-            <div className="BtnPos">
+            <div className="BtnSearch">
               <Button
                 href="/searchbook"
                 TextInButton="Search"
@@ -24,12 +24,11 @@ const home = () => {
                 width="200px"
                 height="44px"
                 colorHover="#2E3E5C"
-                fontSize="16px"
-                margin="0"></Button>
+                fontSize="16px"></Button>
             </div>
           </div>
           <div className="ImageBook">
-            <img className="IconBook" src={catalog}></img>
+            <img className="Book" src={catalog}></img>
           </div>
         </div>
         <div className="Cont3">

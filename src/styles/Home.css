@@ -6,10 +6,6 @@
    display: flex;
 }
 
-.sideBar{
-    width: 300px;
-    min-height: 100vh;
-}
 
 .SearchCont{
     box-shadow: 0 0 5px hsl(206, 7%, 81%);
@@ -45,11 +41,12 @@
     border-width: 1px;
     border-radius: 10px;
     display: flex;
+    
 }
 
 .Welcome{
-    width: 15%;	
-    height: 38%;
+    width: 50%;	
+    height: 100%;
 }
 
 
@@ -71,20 +68,23 @@
     font-style: light;
     font-weight: 100;
     font-size: 15px;
-    
+}
+
+.Book{
+    margin-top: 5%;
+    width: 50%;
+    height: 70%;
+    float: right;
 }
 
 .IconBook{
-    width: 250px;
-    height: 250px;
-    float: right;
-    margin-top: 50px;
-    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 .ImageBook{
-    width: 85%;	
-    height: 50%;
+    width: 100%;
 }
 
 .cont{
@@ -118,9 +118,10 @@
 
 }
 
-.BtnPos{
-    margin-top: 70%;
+.BtnSearch{
+    margin-top: 32%;
 }
+
 .Search{
     height: 210px;
     width: 210px;

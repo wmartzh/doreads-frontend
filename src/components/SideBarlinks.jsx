@@ -5,7 +5,7 @@ import { Avatar } from '@mui/material';
 
 function SidebarLink({ text, img1, href }) {
   return (
-    <div className="link">
+    <div className="link" onClick={() => window.open(href, '_self')}>
       <Avatar className="icon1" variant="square" src={img1} />
       <h1>
         <Link className="link" underline="none" color="#394C73" href={href}>

@@ -43,8 +43,6 @@ export default function ActionAreaCard(props) {
 
   const handleAddBook = () => {
     setOpenSnackbar(true);
-    console.log(alert);
-    console.log(severity);
     addBook(BookProps);
   };
 
@@ -104,8 +102,7 @@ export default function ActionAreaCard(props) {
           sx={{
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            height: 310
+            backgroundSize: 'cover'
           }}
           component={'img'}
           border="none"
@@ -139,10 +136,12 @@ export default function ActionAreaCard(props) {
                   onClick={handleAddBook}
                   height="44px"
                   width="50%"
+                  margin="3px"
                   TextInButton="Add Book"
                   color="#259E5D"
                   colorHover="#056D35"></Button>
                 <Button
+                  margin="3px"
                   open={openSnackbar}
                   onClick={handleDeleteBook}
                   height="44px"
